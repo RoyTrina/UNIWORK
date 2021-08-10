@@ -1,0 +1,101 @@
+ div.container {
+            width: 99%;
+            margin: 8px;
+            border: 1px solid black;
+            line-height: 98%;
+            background-color: darkcyan;
+        }
+
+        div.header, div.footer {
+            padding: 0.5em;
+            color: white;
+            background-color: black;
+            clear: left;
+            text-align: left;
+        }
+
+        h1.header {
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        div.left {
+            float: left;
+            width: 160px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+
+        }
+
+        div.content {
+            margin-left: 190px;
+            border-left: 2px solid black;
+            padding: 1em;
+            text-align: left;
+            height: 554px;
+            background-image: url("../images/background/rain.gif");
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .God_button .My_Music_button {
+            display: inline-block;
+            border-radius: 4px;
+            border: none;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 150px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            transition-duration: 0.4s;
+        }
+
+        .dropdown:hover .God_button .My_Music_button {
+            background-color: lightslategrey;
+            color: lightgray;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: grey;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
