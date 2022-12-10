@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CE152 Assignment Spring 2019</title>
+     <link href="../../css/bootstrap.min.css" rel="stylesheet">
+	 <link rel="stylesheet" href="../../css/idea.css">
+	 <script src="../../js/highlight.pack.js"></script>
+ 	 <script>hljs.initHighlightingOnLoad();</script>
+	 <link rel="stylesheet" href="../../css/labs.css">
+  </head>
+  <body>
+
+	<div class="container">
+			<h1>CE152 Assignment Spring 2019</h1>
+ <hr>
+ <h4>WARNING AND ADVICE ABOUT POSSIBLE ACADEMIC OFFENCES</h4> 
+
+	<p>Your solutions should be your own unaided work. You can make use of
+		any of the programs from the CE152 lecture notes and the lab solutions. 
+		You may use any features from the Java JDK API including those not covered in
+		CE152. </p>
+	<p> You
+		must NOT use any third-party classes (e.g. classes that are not provided as
+		part of the Java JDK download). If you use any other sources, you must clearly
+		indicate this as comments in the program, and the extent of the reference must  
+		be clearly indicated. For more information, please see the University pages on 
+		<a href="https://moodle.essex.ac.uk/course/view.php?id=5844">plagiarism</a>
+		and the <a href="http://www.essex.ac.uk/about/governance/documents/policies/academic-offences-2016-17.pdf">Academic Offences Procedures</a>.</p>
+
+
+	<h4>DO NOT COPY PROGRAM CODE FOR THIS ASSIGNMENT FROM ANOTHER STUDENT 
+   OR FROM THE INTERNET OR 
+        FROM ANY OTHER SOURCES. DO NOT LET OTHER STUDENTS COPY YOUR WORK.</h4>
+
+			<hr> 
+
+			<h4> Deadline: See 
+			  <a href="https://www.essex.ac.uk/e-learning/tools/faser">Faser</a> </h4>
+			<h4><a href="./ce152ass2019FAQ.html">Frequently Asked Questions (FAQ)</a> </h4>
+			<hr> 
+
+
+<h4>Submission</h4>
+<p> The assignment should be submitted via 
+ <a href="https://www.essex.ac.uk/e-learning/tools/faser">Faser</a>.  Your
+   submission should comprise a single zip file containing the source code
+   (i.e. the .java files) for all the classes that you have written as solutions
+   to the assignment tasks. <em>No other files should be included in the zip  file.</em> </p>
+
+<p>The name of your zip file should include both your name and your
+  registration number.   </p>
+
+
+<p>You will receive a  <strong>mark of zero</strong> if you fail to submit 
+	your solutions by the deadline. </p>
+
+<h4>Demonstration</h4>
+
+<p> 
+ You will be required to demonstrate your solutions to the assignment
+  tasks in Week 30 (i.e. shortly after the submission deadline), 
+	please see <a href="https://orb.essex.ac.uk/ce/ce152/restricted/assign/ce152assignDemos.html">this webpage</a> 
+  for further information. 
+<!-- 
+ see 
+the online 
+  <a href="./ce152assDemos.html">Assignment Demonstration Schedule</a>.
+  -->
+</p> 
+
+	<p>You will receive a  <strong>mark of zero</strong> if you fail to 
+		demonstrate your work at the allocated time. </p>
+
+
+<h4>Extenuating Circumstances</h4> 
+
+<p> The standard extenuating circumstances procedures will apply for those
+	who - for circumstances beyond their control - are prevented from submitting
+	work before the deadline or from attending the lab demonstration. Please see the
+	Undergraduate Students' Handbook for the University policies regarding these
+	matters. </p>
+
+<hr> 
+
+<h3>Exercise1 [15%] </h3>
+
+<p>This exercise is about writing methods which operate on two-dimensional arrays of
+integers. You can assume that these arrays are square – the number of rows and columns of the array are equal. You can also assume each of these arrays has at least one row and that all rows are non-empty. For testing, please use an array with four rows and four columns with the following elements:
+</p>
+ 
+<pre> 3 -1  4  0
+ 5  9 -2  6 
+ 5  3  7 -8
+ 2  1  6 -2</pre>
+
+<h4>Part A [5%] </h4>
+
+<p>Create a class <tt>Exercise1</tt>. In this class, write a method </p>
+<pre><code class="java">public static int mainDiagonalElementSum(int[][] array)</code></pre>
+<p>Given a square 2D array, the method should return the sum of its elements which are on the main diagonal. For example, if applied to the test array, the result should be 3+9+7+(-2) = 17. Write a method <tt>main()</tt> which applies <tt>mainDiagonalElementSum</tt> to the test array. Display the method result and check that it is correct.
+</p> 
+
+<h4>Part B [5%] </h4>
+
+<p>In class <tt>Exercise1</tt> write a method </p>
+<pre><code class="java">public static int maxRowAbsSumValue(int[][] array)</code></pre>
+<p>Given a square 2D array, the method should compute for each row the sum of the absolute values of the elements of that row. The method should return the maximum of these sums. For example, if applied to the test array, the method should return the value max (3+1+4+0, 5+9+2+6, 5+3+7+8, 2+1+6+2) = max (8,22,23,11) = 23. Add code to method <tt>main()</tt> which applies <tt>maxRowAbsSumValue</tt> to the test array. Display the method result and check that it is correct.
+</p> 
+
+
+<h4>Part C [5%] </h4>
+
+<p>In class <tt>Exercise1</tt> write a method </p>
+<pre><code class="java">public static int maxColumnAbsSumValue(int[][] array)</code></pre>
+<p>Given a square 2D array, the method should compute for each column the sum of the absolute values of the elements of that column. The method should return the maximum of these sums. For example, if applied to the test array, the method should return the value max (3+5+5+2, 1+9+3+1, 4+2+7+6, 0+6+8+2) = max (15,14,19,16) = 19. Add code to method <tt>main()</tt> which applies <tt>maxColumnAbsSumValue</tt> to the test array. Display the method result and check that it is correct. 
+</p>
+
+	<hr> 
+
+	<h3>Exercise2 [15%] </h3>
+
+<p>This exercise is about writing programs for practicing complementation of 2 given numbers.</p> 
+
+<h4>Part A [9%] </h4>
+
+<p>Write a class <tt>Exercise2</tt> with a method </p>
+<pre><code class="java">public static void partA()</code></pre>
+<p>The method should feature a loop that runs 5 times. In each step of the loop, the program should: </p> <ul>
+	   <li>Generate two random integer numbers in the range 10 to 20 (inclusive). </li>
+	   <li>Ask the user to compute the remainder obtained by dividing two numbers.</li>
+	   <li>Check the answer entered by the user. Inform the user if the answer was correct or not. You can assume that the user input is an integer number.  </li>
+	   <li>Display the current scores (20 marks for each correct answer), the number of the correct answers and the total numbers of answers. </li>
+   </ul>
+<p>Here is log from a sample program run: </p> 
+<pre>Exercise 2A
+10 % 18 = ?
+10
+Correct answer, Current score: 20, performance: 1/1
+16 % 11 = ?
+5
+Correct answer, Current score: 40, performance: 2/2
+16 % 17 = ?
+1
+Incorrect answer, Current score: 40, performance: 2/3
+17 % 19 = ?
+2
+Incorrect answer, Current score: 40, performance: 2/4
+12 % 16 = ?
+12
+Correct answer, Current score: 60, performance: 3/5
+Finish.
+</pre> 
+<p>In class <tt>Exercise2</tt>, add a <tt>main()</tt> method which invokes <tt>part</tt>.  Test your program.
+</p> 
+
+<h4>Part B [6%]</h4> 
+
+<p>In class <tt>Exercise2</tt>, add a method </p>
+	<pre><code class="java">public static void partB()</code></pre>
+<p>The program should implement a similar functionality as in Part A - it should repeatedly ask 
+	the user to compute the complementation of two randomly generated integers in the range from 10 to 20. There are a couple of differences: 
+	<ul>
+		<li>The number of complementation problems should not be fixed. Instead, the program should keep posing new complementation problems until the user decides to quit by entering the letter "<tt>q</tt>". 
+		</li>
+		<li>The program should be able to deal with invalid input by the user. 
+			It should ignore such input and restate the current complementation problem. </li> 
+    </ul>
+
+<p>Here is log from a sample program run: </p> 
+<pre>Exercise 2B
+18 % 12 = ?
+6
+Correct answer, Current score: 20, performance: 1/1
+14 % 16 = ?
+a
+Invalid input
+14 % 16 = ?
+14
+Correct answer, Current score: 40, performance: 2/2
+20 % 4 = ?
+q
+Finish.
+</pre> 
+
+<p>Change method <tt>Exercise2.main()</tt> so that it invokes <tt>partB</tt>.  Test your program.	</p> 
+
+<hr> 
+
+	<h3>Exercise3 [15%]</h3>
+
+	<p>A <A href="https://en.wikipedia.org/wiki/Narcissistic_number">narcissistic number</a> refers to a 3-digit decimal number which is the sum of the cubes of their digits: (e.g. 1 ^ 3 + 5 ^ 3 + 3 ^ 3 = 153).</p>
+	
+<h4>Part A [10%]</h4> 
+
+<p>Write a class <tt>Exercise3</tt> with a method </p>
+	<pre><code class="java">public static boolean isNarcissisticNumber(int number)</code></pre>
+<p>The aim of the method is to judge a number which is a narcissistic number or not. If the input parameter is a narcissistic number, the method returns true, conversely, returns false.In class <tt>Exercise3</tt>, add a <tt>main()</tt> method which invokes <tt>isNarcissisticNumber</tt>. Test your program.
+</p>
+
+<h4>Part B [5%]</h4> 
+
+<p>Write a class <tt>Exercise3</tt> with a method </p>
+	<pre><code class="java">public static int sum()</code></pre>
+<p>The aim of the method is to compute the sum of all the narcissistic numbers. Note that narcissistic number is a 3-digit decimal number.In class <tt>Exercise3</tt>, add a <tt>main()</tt> method which invokes <tt>sum</tt>. Test your program.
+</p>
+
+<hr>
+
+<h3>Exercise4 [15%] </h3>
+
+<p>This exercise is about practicing programming about Java class and objects.</p>
+
+<h4>Part A [10%]</h4>
+
+<p>Create a class <tt>Vehicle</tt> that represents a means of transportation. The class <tt>Vehicle</tt> should have 2 fields, 2 constructors and other 4 member methods:</p> 
+Fields:
+	<ul>
+		<li>A String type.</li>
+		<li>A double speed. </li> 
+    </ul>
+Constructors:
+	<ul>
+		<li>Vehicle(): a constructor without parameters which initializes the vehicle type to “bicycle”and speed to 20.0 by default. </li>
+		<li>Vehicle(String type, double speed): a constructor with 2 parameters which initializes the vehicle type and speed according to the called parameters. </li> 
+    </ul>
+Methods:
+	<ul>
+		<li>setType(String type): a method which changes the current vehicle type to the set value.</li>
+		<li>setSpeed(double speed): a method which changes the current vehicle speed to the set value.</li> 
+		<li>speedUp(): a method which changes the current vehicle speed to speed * 2.</li> 
+		<li>speedDown(): a method which changes the current vehicle speed to speed / 2.</li> 
+    </ul>
+	
+<p>Then create a class <tt>Exercise4</tt> with the following method:</p> 
+<pre>public static void partA() {
+    Vehicle va = new Vehicle ();
+    Vehicle vb = new Vehicle ("car", 60.0);
+    vb.speedUp();
+    System.out.println(va.type + " " + va.speed);
+    System.out.println(vb.type + " " + vb.speed);
+}
+</pre>
+<p>In class <tt>Exercise4</tt>, add a <tt>main()</tt> method which invokes <tt>partA</tt>. The output should be:</p> 
+<pre>bicycle 20.0
+car 120.0
+</pre>
+	
+<h4>Part B [5%]</h4>
+
+<p>In class <tt>Exercise4</tt>, write a method</p>
+<pre>public static void partB() {
+    String[] typeArray = {"car", "train", "plane", "bicycle",};
+    double[] speedArray = {60, 180, 1000, 20};
+    TreeSet<Vehicle> vehicles = new TreeSet<>();
+    for(int i = 0; i < typeArray.length; i++) {
+        vehicles.add(new Vehicle(typeArray[i], speedArray[i]));
+    }
+}
+</pre>
+<p>In class <tt>Exercise4</tt>, add code to method <tt>main()</tt> which invokes <tt>partB</tt>. The program output this ERROR: <tt>“Exception in thread "main" java.lang.ClassCastException: Vehicle cannot be cast to java.base/java.lang.Comparable”</tt>. Please explain why this error occurs and modify the class <tt>Vehicle</tt> to make the program run correctly. </p> 
+
+<hr>
+
+<h3>Exercise5 [20%]</h3>
+	<p>This exercise involves writing a program to solve word search
+	  puzzles. For example, in the grid below: </p>
+	  
+<pre>eoksibaebl
+ropeneapop
+mbrflaoyrm
+gciarrnuna
+utmoryaply
+wnarmutnke
+ngrelcbene
+alytueruei
+fgrammarib
+tdcebykxka</pre>
+<p>it is possible to find the following word occurrences: </p>
+<pre>open: row 1, position 1
+bear: column 5, position 0
+rope: row 1, position 0
+apply: row 4, position 5
+apply: column 6, position 3
+grammar: row 8, position 1
+primary: column 2, position 1
+</pre>
+
+	<p>Create a Java class <tt>WordFinder</tt> with code as below. </p>
+	<pre>
+public class WordFinder {
+  public static final int N = 10;
+  public static char[][] grid = new char[N][N];
+  public static final String GRID_FILE = "data/grid.txt";
+  public static final String WORD_FILE = "data/words.txt";
+
+  public static void main(String[] args) throws FileNotFoundException {
+    initGrid();
+    printGrid();
+    // find();
+  }
+}</pre>
+	<p>Then download two files containing the grid and the words to search for: 
+  <p class="text-center">
+  <a href="https://orb.essex.ac.uk/ce/ce152/restricted/ass/data/grid.txt">grid.txt</a> <br> 
+  <a href="https://orb.essex.ac.uk/ce/ce152/restricted/ass/data/words.txt">words.txt</a>
+  </p>
+  <p>You may have to amend the file paths in your program depending on where you save the files. 
+  </p>
+	  
+	<h4>Part A [5%]</h4> 
+
+	<p>In class <tt>WordFinder</tt>, implement method <tt>initGrid</tt>. This 
+      method should store the contents of file <tt>grid.txt</tt> in the 2D <tt>char</tt> array 
+	  <tt>grid</tt>  declared as a <tt>static</tt> member of the class. </p>
+ <ul>
+   <li>The program should read, in turn, each line of the file and write it to the corresponding row 
+	 of the array. </li> 
+   <li>You can assume that the file contains exactly 10 lines with 10 characters on each line. </li> 
+   <li>Grids will contain only lower-case letters. </li>
+ </ul>
+ <p>Next implement method <tt>printGrid()</tt> which should display the grid on the screen. 
+You may want to separate characters by a blank in order to improve legibility.  
+ </p> 
+ <p>Run the program and check that it inputs and displays the grid correctly. </p> 
+
+	<h4>Part B [15%]</h4> 
+
+	<p>In class <tt>WordFinder</tt>, implement method <tt>find()</tt>. This
+	  method should read words from file <tt>words.txt</tt>. For each
+	  word, it should search the grid for a horizontal (left-to-right)
+	  or vertical (downwards) occurrence. If the word is found in the
+	  grid, then it should display the details of the
+	  occurrence in a format such as below: 
+	</p>
+	  <pre>grammar: row 8, position 1</pre>
+
+	  <Ul>
+		<li>Please include the row and/or column number and the
+		 starting position of the occurrence. Numbering should start at zero as usual.</li> 
+		<li>There should be no output for words that do not occur in the grid. </li>
+		<li>Words may occur multiple times in a grid. In this case, each occurrence should be reported on a separate 
+		  line of the output. </li>
+		<li>In file <tt>words.txt</tt>, each line contains exactly one word. </li>
+		 <li>Please use <tt>String</tt>
+		  method <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#trim--"><tt>trim</tt></a> to remove 
+		  leading or trailing whitespace when reading words. </li> 
+	  </ul> 
+
+	<hr>
+				
+<h3>Exercise6 [20%]</h3>
+
+	<p><i>This task requires some material from Week 23. </i> </p>
+
+<p> 
+  For this task you should create a class called <tt>BelishaBeacon</tt> that
+  provides a 2D graphical animation of the flashing orange lights that
+  are used to mark the location of pedestrian crossings – often called
+  "Belisha Beacons" (in honour of the Minister of Transport who
+  introduced them).</p> 
+
+<p>When the class is run it should display a window similar to the
+following:</p> 
+<p class="text-center"> 
+<img src="./images/belishaBeacon.png" alt="Belisha Beacon"/> 
+</p> 
+<p>Initially the lamp should flash; that is, its colour should
+alternate between orange and light grey with a period of about half a
+  second. When the <em>Steady</em> button is clicked the flashing should stop and
+  the lamp remain permanently on (i.e. orange); when the <em>Flash</em> button is
+pressed, the lamp should resume flashing. Closing the window should
+terminate the program. </p> 
+<p>The drawing should be constructed from geometrical shapes displayed using Java2D. It 
+  should not display an image taken from a file. 
+</p> 
+<hr> 
+
+<h2>Assignment Marking Criteria</h2>
+
+<table class="table table-striped" style="width:auto"> 
+	  <tr><td>Exercise</td> <td>Weighting</td> <td>Criteria</td> </tr> 
+ 	  <tr><td>1A – 1C</td> <td>15%</td> <td> 5 marks for each correct method.</td></tr>
+			<tr><td>2A </td> <td>9%</td> <td>3 marks for a loop posing 5 complementation problems. 2 marks for generating random numbers between 10 and 20 used in those problems. 2 marks for reading the user input and providing proper feedback if answer was right or wrong. 2 marks for displaying a proper score (number of correct answers, total number of answers)</td></tr>
+			<tr><td>2B</td> <td>6%</td> <td>2 marks for posing an unlimited number of complementation problems. 2 marks for proper handling of "q" input. 2 marks for proper handling of invalid input.</td></tr>
+			<tr><td>3A</td> <td>10%</td> <td>10 marks for correct implementation of the method.</td></tr>
+			<tr><td>3B</td> <td>5%</td> <td>5 marks for correct implementation of the method.</td></tr>
+			<tr><td>4A</td> <td>10%</td> <td>As for class Vehicle, 2 marks for a class definition with suitable fields, 2 marks for two correct constructors, 4 marks for correct implementation of other four member methods. As for class Exercise5, 2 marks for the correct invocation of the class Vehicle.</td></tr>
+			<tr><td>4B</td> <td>5%</td> <td>2 marks for the correct explanation of the error. 3 marks for correctly modifying the program.</td></tr>
+			<tr><td>5A</td> <td>5%</td> <td>3 marks for proper reading of grid from file. 2 marks for display of grid in console.</td></tr>
+			<tr><td>5B</td> <td>15%</td> <td>5 marks for finding all forward occurrences of words. 5 marks for finding all downward occurrences of words. 2 marks for proper handling of multiple occurrences of words. 3 marks for proper reporting of details of occurrences.</td></tr>
+			<tr><td>6</td> <td>20%</td> <td>10 marks will be awarded for a solution that correctly displays a window with a frame that shows a suitable drawing. 10 marks will be awarded for a correct implementation of the two buttons. Partial marks may be given if the drawing is incomplete or if one of the buttons has not been implemented.</td></tr>
+	  
+ 	</table>
+
+	</br>
+
+
+
+	</div> 
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
