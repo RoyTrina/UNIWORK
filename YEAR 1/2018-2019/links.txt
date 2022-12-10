@@ -1,0 +1,15 @@
+https://onlinecourses.science.psu.edu/stat501/node/251/
+
+file:///C:/Users/Trina/Documents/2018-2019/chapter9%20-%20Simple%20Linear%20Regression.pdf
+
+http://www.learningaboutelectronics.com/Articles/How-to-create-a-histogram-in-matplotlib-with-Python.php - how to create a histogram
+
+https://youtu.be/yejsG6TKWNU - how to create scatter plots
+
+https://youtu.be/4Rz8cpEw66E - how to create box plots
+
+https://youtu.be/9fl0KwLwuHc - how to create a bar chart
+
+https://stackoverflow.com/questions/3949226/calculating-pearson-correlation-and-significance-in-python - correlation
+
+https://stackoverflow.com/questions/3559337/how-to-generate-a-random-list-of-fixed-length-of-values-from-given-range - how to generate a random list
