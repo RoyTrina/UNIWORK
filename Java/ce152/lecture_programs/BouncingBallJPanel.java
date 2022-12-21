@@ -1,11 +1,11 @@
-package lectures_programs;
+package lecture_programs;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-import static lectures_programs.Ball.BOX_HEIGHT;
-import static lectures_programs.Ball.BOX_WIDTH;
+import static lecture_programs.Ball.BOX_HEIGHT;
+import static lecture_programs.Ball.BOX_WIDTH;
 
 public class BouncingBallJPanel extends JPanel {
     public static final int BALL_RADIUS = 20;

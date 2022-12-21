@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-import static lectures_programs.Ball.BOX_HEIGHT;
-import static lectures_programs.Ball.BOX_WIDTH;
+import static lecture_programs.Ball.BOX_HEIGHT;
+import static lecture_programs.Ball.BOX_WIDTH;
 
 public class BBallGame extends JFrame {
     public static final int BOX_MARGIN = 100;
