@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 import java.io.File;
 import java.io.FileNotFoundException;

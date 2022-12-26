@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

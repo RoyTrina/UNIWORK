@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 /* Traditional first program */
 

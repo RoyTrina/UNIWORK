@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 import java.awt.geom.AffineTransform;
 import java.awt.geom.PathIterator;

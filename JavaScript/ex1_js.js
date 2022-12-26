@@ -1,5 +1,5 @@
-var start_r;
-var end_r;
+let start_r;
+let end_r;
 
 function conversion(tagID, start_r, end_r) {
     const conversion = document.getElementById(tagID);
@@ -9,8 +9,8 @@ function conversion(tagID, start_r, end_r) {
 
     const table = pre.appendChild(document.createElement("table"));
     const table_head = pre.appendChild(document.createElement("thead"));
-    var table_row = table_head.appendChild(document.createElement("tr"));
-    var table_h = table_row.appendChild(document.createElement("th"));
+    let table_row = table_head.appendChild(document.createElement("tr"));
+    let table_h = table_row.appendChild(document.createElement("th"));
     table_h.appendChild(document.createTextNode("Celsius"));
     table_h = table_row.appendChild(document.createElement("th"));
     table_h.appendChild(document.createTextNode("Fahrenheit"));
@@ -18,7 +18,7 @@ function conversion(tagID, start_r, end_r) {
     const table_body = table.appendChild(document.createElement("tbody"));
 
     //getting the values
-    var start_value = $("start_r").data('',);
+    const start_value = $("start_r").data('',);
     start_r = start_value;
 
 
@@ -29,7 +29,7 @@ function conversion(tagID, start_r, end_r) {
         $('start_r').data('', start_r);
     }
 
-    var end_value = $('end_r').data('');
+    const end_value = $('end_r').data('');
     end_r = end_value;
 
     if (end_value == null || end_value === 0) {
@@ -37,7 +37,7 @@ function conversion(tagID, start_r, end_r) {
 
     }
 
-    var i;
+    let i;
     for (i = start_r; i < end_r; i++) {
         table_row = table_body.appendChild(document.createElement("tr"));
 
@@ -46,7 +46,7 @@ function conversion(tagID, start_r, end_r) {
         } else {
             table_row.setAttribute("class", "odd");
         }
-        var data = table_row.appendChild(document.createElement("td"));
+        let data = table_row.appendChild(document.createElement("td"));
         data.appendChild(document.createTextNode(i));
         data = table_row.appendChild(document.createElement("td"));
         data.appendChild(document.createTextNode(celsius_toFahrenheit(i)));

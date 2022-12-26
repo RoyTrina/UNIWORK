@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

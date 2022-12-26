@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 /**
  * Created by norbert on 02/03/2017.

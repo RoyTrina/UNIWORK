@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 public class MyMath {
     public static double square(double x) {

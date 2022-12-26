@@ -1,4 +1,4 @@
-package lectures_programs;
+package lecture_programs;
 
 // affine transformations from user-space coordinates to screen coordinates
 
