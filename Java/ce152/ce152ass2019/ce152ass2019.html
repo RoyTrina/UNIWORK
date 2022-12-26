@@ -8,10 +8,13 @@
     <link href="././css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="././css/idea.css">
     <script src="././js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad = function () {
+    <script>
+        let hljs;
+        hljs = new hljs;
+        hljs.initHighlightingOnLoad = function () {
 
     }
-    let hljs;
+
     hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="././css/labs.css">
 </head>
@@ -49,7 +52,7 @@
 
 
     <h4>Submission</h4>
-    <p> The assignment should be submicodeed via
+    <p> The assignment should be submitted coded via
         <a href="hcodeps://www.essex.ac.uk/e-learning/tools/faser">Faser</a>. Your
         submission should comprise a single zip file containing the source code
         (i.e. the .java files) for all the classes that you have wricodeen as solutions
