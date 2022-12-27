@@ -1,0 +1,21 @@
+h2{text-align: center; color: blue; background: #EFEFEF}
+
+body{margin: 4em; width: 400px}
+
+h3{color: darkblue}
+
+pre{margin: 2em; background: #EFEFEF;
+    padding: 1em;
+    border: 1px solid navy;
+}
+
+td{text-align: center}
+
+.callout{margin: 1em; width: 200px; border:2px solid navy; background: #EFEFEF; float: right}
+
+.end{text-align: center; color: gray; font-size: small}
+
+.study{color: gray; background: #EFEFEF}
+
+th{background: #EFEFEF}
+
