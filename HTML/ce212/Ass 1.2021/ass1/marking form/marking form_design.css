@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background: slategrey;
+}
+
+
+th {
+    background: dimgrey;
+}
+
+tr {
+    background: darkgrey;
+}
+
+textarea {
+    font-family: Verdana, sans-serif;
+}
+
+#marks {
+    border: 1px solid black;
+    background: grey;
+}

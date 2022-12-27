@@ -1,0 +1,59 @@
+body {
+    font-family: Verdana, sans-serif;
+    padding: 1em;
+    background-color: darkslategrey;
+}
+
+h1 {
+    border: 1px solid black;
+    background-color: #d21f3c;
+    text-align: center;
+}
+
+#itemList {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    font-size: medium;
+
+}
+
+.img {
+    width: 24px;
+    height: 24px;
+}
+
+
+tr {
+    background-color: indianred;
+}
+
+th {
+    background-color: #ea3c53;
+}
+
+#navigation_Bar {
+    border: 2px solid;
+    background-color: chocolate;
+}
+
+#container {
+    float: right;
+    border: 1px solid black;
+    background-color: palevioletred;
+}
+
+#itemCounter {
+    width: 70px;
+}
+
+#shoppingBasket {
+    float: right;
+}
+
+#orderID, #basketInfo, #orderInfo {
+    border: 1px solid black;
+    background-color: indianred;
+}

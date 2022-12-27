@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" type="text/css" href="converter_design.css">
+    <link rel="shortcut icon" href="#">
+    <script src="converter_function.js"></script>
+    <script src="../jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<h2>My temperature converter</h2>
+<div id="form_holder">
+    <form name="temperature_form">
+        <p>Choose temperature conversion: </p>
+        <label>
+            <select>
+                <option>None</option>
+                <option id="celsius_to_fahrenheit">Celsius to Fahrenheit</option>
+                <option id="fahrenheit_to_celsius">Fahrenheit to Celsius</option>
+            </select>
+        </label>
+        <br>
+        <p>Enter the range: </p>
+        <label>Start - <input type="text" id="number1"></label>
+        <br>
+        <br>
+        <label>End - <input type="text" id="number2"></label>
+        <br>
+        <br>
+        <button onclick="sortTable()">Sort Table</button>
+        <button onclick="input_checker()">Submit data</button>
+        <button onclick="delete_data()">Delete data</button>
+    </form>
+    <br>
+    <br>
+    <div id="screen1">
+        <table id="temperature_Table">
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

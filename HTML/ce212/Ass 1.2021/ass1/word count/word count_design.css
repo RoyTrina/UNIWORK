@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background: indianred;
+}
+
+div {
+    border: 1px solid red;
+    background: darkorange;
+}
+
+table {
+    margin: 2em;
+}
+
+th {
+    background: crimson;
+
+}
+
+tr.even {
+    background: firebrick;
+
+}
+
+tr.odd {
+    background: orange;
+}

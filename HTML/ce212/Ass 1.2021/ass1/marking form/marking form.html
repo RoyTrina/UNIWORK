@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marking form</title>
+    <link rel="stylesheet" type="text/css" href="marking%20form_design.css">
+    <script src="marking%20form_function.js"></script>
+    <script src="../jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<label>Enter student's full name - <input type="text" id="student_name"></label>
+<br>
+<br>
+<table id="student_data">
+    <thead>Marking sheet</thead>
+    <tbody>
+    <tr>
+        <th>Section</th>
+        <th>Max</th>
+        <th>Comments</th>
+        <th>Mark</th>
+    </tr>
+    <tr>
+        <td>Dynamic Table</td>
+        <td>20</td>
+        <td><label>
+            <textarea id="note1" style="width: 940px; height: 50px" placeholder="Enter comment"></textarea>
+        </label></td>
+        <td><label>
+            <select id=mark1 onload="generate_Options(document.getElementById('mark1'))" onchange="marks()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </label></td>
+    </tr>
+    <tr>
+        <td>Intellij Usage</td>
+        <td>10</td>
+        <td><label>
+            <textarea id="note2" style="width: 940px; height: 50px" placeholder="Enter comment"></textarea>
+        </label></td>
+        <td><label>
+            <select id="mark2" onload="generate_Options(document.getElementById('mark2'))" onchange="marks()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Calendar Control</td>
+        <td>30</td>
+        <td><label>
+            <textarea id="note3" style="width: 940px; height: 50px" placeholder="Enter comment"></textarea>
+        </label></td>
+        <td><label>
+            <select id="mark3" onload="generate_Options(document.getElementById('mark3'))" onchange="marks()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+            </select>
+        </label></td>
+    </tr>
+    <tr>
+        <td>Active form</td>
+        <td>20</td>
+        <td><label>
+            <textarea id="note4" style="width: 940px; height: 50px" placeholder="Enter comment"></textarea>
+        </label></td>
+        <td><label>
+            <select id="mark4" onload="generate_Options(document.getElementById('mark4'))" onchange="marks()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </label></td>
+    </tr>
+    <tr>
+        <td>Object Database</td>
+        <td>20</td>
+        <td><label>
+            <textarea id="note5" style="width: 940px; height: 50px" placeholder="Enter comment"></textarea>
+        </label></td>
+        <td><label>
+            <select id="mark5" onload="generate_Options(document.getElementById('mark5'))" onchange="marks()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </label></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<button type="submit" onclick="generate_student_data()">Generate student data</button>
+<button onclick="clear_form()">Clear form</button>
+<br>
+<br>
+
+<div id="marks" onload="marks()">
+    <p id="answer"></p>
+</div>
+
+</body>
+</html>

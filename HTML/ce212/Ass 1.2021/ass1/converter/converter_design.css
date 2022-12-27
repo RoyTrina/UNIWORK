@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background: steelblue;
+}
+
+text {
+    margin: 2em;
+    border: 1px solid royalblue;
+}
+
+#screen1 {
+    margin: 1em;
+    border: 1px solid royalblue;
+    background: lightsteelblue;
+    padding: 1em;
+}
+
+#temperature_Table {
+    margin: 2em;
+}
+
+th {
+    background: deepskyblue;
+}
+
+tr.even {
+    background: dodgerblue;
+
+}
+
+tr.odd {
+    background: cornflowerblue;
+
+}

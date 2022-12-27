@@ -1,0 +1,39 @@
+HOW TO PREPARE YOUR ASSIGNMENT FOR SUBMISSION FROM AN IntelliJ Idea DEVELOPMENT
+
+Any .css and .js files that you have used should have names that are
+likely to be unique (use your initials or student id in the filename) so
+that when I'm testing the ssignment my browser will not use cached versions
+of another student's files.
+
+You should not rename .jsp or .java files
+
+If you've been developing on your own PC or laptop remember to change the URL
+in the getConnection call in ShopB.java back to the URL in the original file
+obtained from Moodle
+
+The following files need to be in the folder tomcat\webapps\ass2 (please rename
+it to ass2 if your folder has a different name):
+1 All JSP files
+2 Any .css and .js files that you've used (in css and/or js folders if you've
+  used them)
+3 All shopbd.* files (but NOT shopdb.lck)
+4 The complete images and thumbnails folders
+5 A copy of the folder WEB_INF which IntelliJ will have built
+To obtain it:
+(i) Remove any WEB_INF folder that is already in tomcat\webapps\ass2.
+(ii) Look in your the folder that contains your IntelliJ project.
+     You should find a folder called out, containing a folder called artifacts,
+     containing a folder called something like ass2_war_exploded.
+     In this folder there will be a folder called WEB_INF; copy it
+     directly into M:\tomcat\webapps\ass2
+
+Do not submit hsqldb.jar; I've got a copy in my tomcat\lib folder which will
+be used when testing.
+
+If you have time, check that the shop can be accessed from this folder outside IntelliJ by
+starting Tomcat as in lab 4 and typing the URL
+   //localhost:8080/ass2/index.jsp
+
+You should submit to FASER a zip file containing the complete folder tomcat\webapps\ass2 and also 
+copies of all .java files.  (You may if you wish put these into a Java folder in tomcat\webapps\ass2)
+Do NOT submit the while of your tomcat or tomcat\webapps folders

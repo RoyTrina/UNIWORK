@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word frequency counter</title>
+    <link rel="stylesheet" type="text/css" href="word%20count_design.css">
+    <script src="word%20count_function.js"></script>
+    <script src="../jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h2>Word counter</h2>
+
+<div>
+    <label>Filename: <input id="file" type="text">
+    </label>
+</div>
+
+<br>
+<br>
+<div id="input_file">
+    <input type="file">
+</div>
+<br>
+<br>
+<div id="word_Table">
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Frequency</th>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+
+
+<button onclick="make_Table()">Generate table</button>
+<button onclick="sort_Table_Alphabetically()">Sort table alphabetically</button>
+<button onclick="sort_Table_frequency()">Sort table by frequency</button>
+<button onclick="clear()">Clear</button>
+
+</body>
+</html>
