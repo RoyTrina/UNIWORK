@@ -1,0 +1,1 @@
+The solutions to this lab uncovered a bug in DoublyLinkedList.insert() from lecture 2. Please either download the new version of the code from unit 2, or make the following change to line 33: "getItem(index)" should be "getItem(index-1)".
