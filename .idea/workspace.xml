@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="Added ce204 files" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2a259999-05ac-4ad7-bf56-0169db79dfd2" />
+        <option name="url" value="https://github.com/RoyTrina/UNIWORK.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2JF5wMcQgoxGJLYpKkwYywFJQQd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "14",
+    "last_opened_file_path": "C:/Users/Trina/IdeaProjects/UNIWORK/Java/ce204/Lecture_code",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2045977",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.scopes"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Trina\IdeaProjects\UNIWORK\Java\ce204\Lecture_code" />
+      <recent name="C:\Users\Trina\IdeaProjects\UNIWORK\Java\ce204\Labs" />
+      <recent name="C:\Users\Trina\IdeaProjects\UNIWORK\Java\ce203\assignment" />
+      <recent name="C:\Users\Trina\IdeaProjects\UNIWORK\Java\ce203\practice" />
+      <recent name="C:\Users\Trina\IdeaProjects\UNIWORK\Java\ce203\lectures" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="" />
+      <created>1671661228384</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671661228384</updated>
+      <workItem from="1671661234527" duration="2163000" />
+      <workItem from="1671664593640" duration="2604000" />
+      <workItem from="1671667356721" duration="502000" />
+      <workItem from="1672095225050" duration="3309000" />
+      <workItem from="1672098708749" duration="2312000" />
+    </task>
+    <task id="LOCAL-00001" summary="Sorted through the files and fixed issues">
+      <created>1672096433849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672096433849</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Sorted through the files and fixed issues">
+      <created>1672097210885</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672097210885</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added part of ce203 files">
+      <created>1672098316956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672098316956</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added part 2 of ce203 files">
+      <created>1672099299535</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672099299535</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added part 2 of ce203 files">
+      <created>1672099415008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672099415008</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added final part of ce203 files">
+      <created>1672099819405</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672099819405</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added ce204 files">
+      <created>1672100221944</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672100221944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Sorted through the files and fixed issues" />
+    <MESSAGE value="Added part of ce203 files" />
+    <MESSAGE value="Added part 2 of ce203 files" />
+    <MESSAGE value="Added final part of ce203 files" />
+    <MESSAGE value="Added ce204 files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ce204 files" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
