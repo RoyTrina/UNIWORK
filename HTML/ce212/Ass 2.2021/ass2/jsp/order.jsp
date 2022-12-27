@@ -20,19 +20,19 @@
     // when the order has been made, we should also empty
     // the contents of this shopping basket - but how ???
 
-    if (custName != null) {
+    %>if (custName != null) {
         // order the basket of items!
         // then empty the basket
-    %>
-    <h2> Dear <%= custName %> ! Thank you for your order. </h2>
-    <%
-    }
-        else {
-        %>
-        <h2> please go back and supply a name </h2>
-        <%
-    }
 
-%>
+<h2> Dear <%= custName %> ! Thank you for your order. </h2>
+
+}
+        else {
+
+<h2> please go back and supply a name </h2>
+
+}<%
+
+    %>
 
 </html>
