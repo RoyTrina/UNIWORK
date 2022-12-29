@@ -10,7 +10,7 @@ public class Game extends JFrame {
 
     void initialise() {
         // if grid already drawn (reinitialise rather than initialise) remove grid from frame and delete it
-        if(grid_panel != null) {
+        if (grid_panel != null) {
             this.remove(grid_panel);
             grid_panel = null;
         }
@@ -20,13 +20,13 @@ public class Game extends JFrame {
 
         // for loop to create grid
 
-        for(int x = 0; x < grid_array.length; x++) {
-            for(int y = 0; y < grid_array[x].length; y++) {
+        for (int x = 0; x < grid_array.length; x++) {
+            for (int y = 0; y < grid_array[x].length; y++) {
                 grid_array[x][y] = new JPanel();
 
                 // checkered design black and white
 
-                if((x % 2 == 0 && y % 2 == 1) || (x % 2 == 1 && y % 2 == 0)) {
+                if ((x % 2 == 0 && y % 2 == 1) || (x % 2 == 1 && y % 2 == 0)) {
                     grid_array[x][y].setBackground(Color.BLACK);
                 } else {
                     grid_array[x][y].setBackground(Color.WHITE);
