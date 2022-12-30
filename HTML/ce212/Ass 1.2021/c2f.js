@@ -40,9 +40,5 @@ function conversionTable(start, end) {
         } else {
             tr.setAttribute("class", "even");
         }
-
-
-
     }
-
 }
