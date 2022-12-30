@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="Added ce204 files" />
+    <list default="true" id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="Moved and altered some files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +58,7 @@
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "14",
     "last_opened_file_path": "C:/Users/Trina/IdeaProjects/UNIWORK/Java/ce204/Lecture_code",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2045977",
