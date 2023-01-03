@@ -1,0 +1,70 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"db2f4cb2-82fb-4ebf-b653-0e5d057e06df\" name=\"Changes\" comment=\"Moved and altered some files\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"2a259999-05ac-4ad7-bf56-0169db79dfd2\" />\r\n        <option name=\"url\" value=\"https://github.com/RoyTrina/UNIWORK.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2JF5wMcQgoxGJLYpKkwYywFJQQd\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"autoscrollToSource\" value=\"true\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"jdk.selected.JAVA_MODULE\": \"14\",\r\n    \"last_opened_file_path\": \"C:/Users/Trina/IdeaProjects/UNIWORK/Java/ce204/Lecture_code\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2045977\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"project.scopes\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Trina\\IdeaProjects\\UNIWORK\\Java\\ce204\\Lecture_code\" />\r\n      <recent name=\"C:\\Users\\Trina\\IdeaProjects\\UNIWORK\\Java\\ce204\\Labs\" />\r\n      <recent name=\"C:\\Users\\Trina\\IdeaProjects\\UNIWORK\\Java\\ce203\\assignment\" />\r\n      <recent name=\"C:\\Users\\Trina\\IdeaProjects\\UNIWORK\\Java\\ce203\\practice\" />\r\n      <recent name=\"C:\\Users\\Trina\\IdeaProjects\\UNIWORK\\Java\\ce203\\lectures\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"14\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"db2f4cb2-82fb-4ebf-b653-0e5d057e06df\" name=\"Changes\" comment=\"\" />\r\n      <created>1671661228384</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1671661228384</updated>\r\n      <workItem from=\"1671661234527\" duration=\"2163000\" />\r\n      <workItem from=\"1671664593640\" duration=\"2604000\" />\r\n      <workItem from=\"1671667356721\" duration=\"502000\" />\r\n      <workItem from=\"1672095225050\" duration=\"3309000\" />\r\n      <workItem from=\"1672098708749\" duration=\"2312000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Sorted through the files and fixed issues\">\r\n      <created>1672096433849</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672096433849</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Sorted through the files and fixed issues\">\r\n      <created>1672097210885</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672097210885</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Added part of ce203 files\">\r\n      <created>1672098316956</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672098316956</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Added part 2 of ce203 files\">\r\n      <created>1672099299535</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672099299535</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Added part 2 of ce203 files\">\r\n      <created>1672099415008</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672099415008</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Added final part of ce203 files\">\r\n      <created>1672099819405</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672099819405</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Added ce204 files\">\r\n      <created>1672100221944</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672100221944</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Sorted through the files and fixed issues\" />\r\n    <MESSAGE value=\"Added part of ce203 files\" />\r\n    <MESSAGE value=\"Added part 2 of ce203 files\" />\r\n    <MESSAGE value=\"Added final part of ce203 files\" />\r\n    <MESSAGE value=\"Added ce204 files\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added ce204 files\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="Moved and altered some files" />
++    <list default="true" id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="Added and modified files">
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -58,12 +60,15 @@
+     "WebServerToolWindowFactoryState": "false",
+     "jdk.selected.JAVA_MODULE": "14",
+     "last_opened_file_path": "C:/Users/Trina/IdeaProjects/UNIWORK/Java/ce204/Lecture_code",
++    "node.js.detected.package.eslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "project.structure.last.edited": "Project",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2045977",
+     "run.code.analysis.last.selected.profile": "pProject Default",
+-    "settings.editor.selected.configurable": "project.scopes"
++    "settings.editor.selected.configurable": "project.scopes",
++    "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+   <component name="RecentsManager">
+@@ -97,6 +102,7 @@
+       <workItem from="1671667356721" duration="502000" />
+       <workItem from="1672095225050" duration="3309000" />
+       <workItem from="1672098708749" duration="2312000" />
++      <workItem from="1672357883909" duration="895000" />
+     </task>
+     <task id="LOCAL-00001" summary="Sorted through the files and fixed issues">
+       <created>1672096433849</created>
+@@ -147,7 +153,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1672100221944</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Added and modified files">
++      <created>1672358801085</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1672358801085</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -171,7 +184,8 @@
+     <MESSAGE value="Added part 2 of ce203 files" />
+     <MESSAGE value="Added final part of ce203 files" />
+     <MESSAGE value="Added ce204 files" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added ce204 files" />
++    <MESSAGE value="Added and modified files" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added and modified files" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
