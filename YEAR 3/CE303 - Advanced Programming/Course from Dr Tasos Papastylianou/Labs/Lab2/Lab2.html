@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding:1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { background-color: #2a211c; color: #fdce9d; font-size: 0.9em; font-family: monospace; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt                { padding-left: 0.5em; padding-right: 0.5em; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 2.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 2. Threads and Synchronisation</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Thread Basics</a></li>
+          <li><a href="#2">Race conditions and synchronisation</a></li>
+          <li><a href="#3">Parallelisation</a></li>
+          <li><a href="#4">Further work</tt></a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <blockquote>
+        <p> Note: I encourage students to work from linux, using plain
+         textfiles (preferably edited in a terminal editor like vim or nano),
+         and compiling in the terminal and paying careful attention to what
+         compilation errors are trying to tell you. <i>Especially</i> if you
+         feel uncomfortable with any of those elements! This is your time to
+         practice, and these are very useful skills to have; no computer
+         scientist / software engineer should be afraid to work under these
+         conditions!
+        </p>
+        <p>
+          However, it's entirely up to you if you want to work from Windows / an
+          IDE, and GLAs will be happy to help you troubleshoot problems.
+        </p>
+      </blockquote>
+
+      <h2 name="1">Part 1. Thread Basics</h2>
+
+      <h3>Exercise 1: <tt>start()</tt>, <tt>join()</tt>, and <tt>interrupt()</tt></h3>
+
+      <ul>
+
+        <li>Download the <tt>Greeter.java</tt> file provided in Moodle under
+          today's lab files, and copy it in your "root" CE303 folder. Study the
+          code and run the program a couple of times to get a feel for what it
+          does.
+        </li>
+
+        <h4>Question 1</h4>
+
+        <li> Copy this file into folder <tt>Lab2/Exercise1/Q1</tt> and add the
+          package declaration <tt>package Lab2.Exercise1.Q1;</tt> to the copied
+          file to declare it as beloging to the package corresponding to the
+          folder hierarchy you've just created.
+        </li>
+
+        <li>
+          <p> Now modify this file by using appropriate <tt>join()</tt> calls in
+            the <tt>main</tt> method, so that the program will print:
+
+  <pre>"Both Greeters have ended after both Greeter threads have terminated".</pre>
+
+          </p>
+        </li>
+
+        <li>
+          <p> Note that method <tt>join()</tt> can throw an
+            <tt>InterruptedException</tt>, which is a checked exception (meaning
+            your program will not compile unless you explicitly handle the
+            possibility of the exception occurring, and acting appropriately).
+            You will therefore either need to declare this exception in
+            <tt>main</tt>, or handle it in a try-catch block.
+          </p>
+        </li>
+
+        <h4>Question 2</h4>
+
+        <li> Copy your <tt>Lab2/Exercise1/Q1/Greeter.java</tt> from above into
+          <tt>Lab2/Exercise1/Q2</tt> and adjust the package declaration inside
+          the file appropriately. Now modify the <tt>main</tt> method so that it
+          interrupts thread <tt>t1</tt> about 2.1 seconds after the time where
+          both threads were started. What do you expect to see? Run your program
+          to confirm.
+        </li>
+        <li>
+          Now modify the class further in such a way that it will enable you to
+          query (after each thread has terminated), whether the thread had been
+          interrupted, or whether it had terminated normally. Add at the end of
+          the <tt>main</tt> method, (i.e. after the "both threads have
+          terminated" part) a print statement that informs you whether each
+          thread had been interrupted or not.
+        </li>
+
+      </ul>
+
+      <h2 name="2">Part 2: Race conditions and synchronisation</h2>
+
+      <h3>Exercise 2: Synchronised blocks</h3>
+
+      <ul>
+
+        <li> Create a new folder called Lab2/Exercise2/Q1 and download the
+          <tt>InterferenceChecker.java</tt> file from Moodle into this folder.
+          Study the code and run it a couple of times to see how it behaves.
+        </li>
+
+        <h4>Question 1</h4>
+
+        <li> The program exhibits non-deterministic behaviour (i.e. the
+          behaviour is not guaranteed to be the same each time it is run), due
+          to a "race condition". Try to identify what is causing the
+          non-determinism.
+        </li>
+
+        <li>
+          Add an instance field <tt>lock</tt> to the class:
+
+  <pre><code>
+  public Object lock = new Object();
+  </code></pre>
+
+          and put a
+
+  <pre><code>
+  synchronized (lock) { ... }
+  </code></pre>
+
+          block around the three statements in the body of the loop inside the
+          <tt>run()</tt> method. What effect (if any) do tyou think this
+          modification will have? Run the program a few times to check if your
+          prediction is correct.
+        </li>
+
+        <li>
+          Now change the lock attribute so that it is <tt>static</tt>. What
+          effect (if any) do you think this modification will have? Run the
+          program a couple of times to check if your prediction is correct.
+        </li>
+
+      </ul>
+
+      <h3>Exercise 3: Synchronisation Points (i.e. "Barriers")</h3>
+
+      <ul>
+
+        <li>
+          It is sometimes useful to introduce a synchronisation point where
+          certain threads have to wait for each other, e.g. computation will
+          only continue once all of those threads have reached the
+          synchronisation point.
+        </li>
+
+        <h4>Question 1</h4>
+
+        <li>
+          Download <tt>TwoJobs.java</tt> from the lab's download folder on
+          moodle, and place it in <tt>Lab2/Exercise3/Q1</tt>. This class
+          will be used to demonstrate the use of such a
+          synchronisation point.
+        </li>
+
+        <li>
+          First, study and run the file. Can you explain the output?
+        </li>
+
+        <li> Your task is to add program code to this class that uses a
+          <tt>CyclicBarrier</tt> in a suitable manner, so that threads wait for
+          each other after completing <tt>firstJob()</tt>. In other words, no
+          thread should start <tt>secondJob()</tt>, until all threads have
+          completed <tt>firstJob()</tt>.
+        </li>
+
+      </ul>
+
+      <h2 name="3">Part 3: Parallelisation</h2>
+
+      <h3>Exercise 4: Parallel Speed-Up on Multi-Core Machines</h3>
+
+      <ul>
+
+        <li>
+          For some applications, performance on multi-core machines can be
+          improved by splitting a large job into several smaller tasks, which
+          are executed on different threads.
+        </li>
+
+        <li> This kind of "parallel speedup" works best if each thread is given
+          a "sizeable" task for execution. If tasks are twoo small, then the
+          "parallelized" program may even run slower than the sequential
+          version, due to the overhead caused by splitting up the computation
+          into tasks and/or combining task results.
+        </li>
+
+        <li> As an example, consider the problem of finding large "probable
+          prime numbers" (see the documentation of <a
+          href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html">java.math.BigInteger</a>).
+          More specifically, given a list of some large integers, your job is to
+          construct a <tt>Map</tt> object that associates each element
+          <tt>x</tt> of the list with the "next probable prime number after
+          <tt>x</tt>", as calculated by the
+          <tt>BigInteger.nextProbablePrime()</tt> method.
+        </li>
+
+        <h4>Question 1</h4>
+
+        <li> Code one sequential and one parallel solution to this problem, as:
+
+  <pre><code>
+  public class FindProbablePrimes {
+      ...
+      public static Map&lt;BigInteger, BigInteger&gt; sequential ( List&lt;BigInteger&gt; arguments ) { ... }
+      public static Map&lt;BigInteger, BigInteger&gt;  parallel  ( List&lt;BigInteger&gt; arguments ) { ... }
+  }
+  </code></pre>
+
+        </li>
+
+        <li> The parallel solution should compute each value
+          <tt>nextProbablePrime(x)</tt> on a separate thread. Test the
+          performance of your two methods when applied to a list with eight
+          elements.  Also, confirm that the two methods compute the same
+          results.
+        </li>
+
+        <blockquote style="background-color: lightblue;"> Note: please use the
+          two-argument <tt>BigInteger</tt> constructor to construct an argument
+          list with suitable random numbers; the bit-length of these numbers
+          should be such that each <tt>nextProbablePrime()</tt> computation
+          takes a few hundred milliseconds. (e.g. on a typical desktop computer,
+          this might work out at a bit-length of 2000, but you may have to
+          adjust this value depending on the speed of the machine you're testing
+          this on).
+        </blockquote>
+
+        <li> Repeat the performance test a couple of times. Which of the two
+          methods is faster, and by approximately what factor? (Hint: you can
+          use <tt>System.nanoTime()</tt> to time your method call)
+        </li>
+
+        <li> Do some more tests for different bit-length values, and for
+          different numbers of elements. How do these parameters influence the
+          relative performance of the sequential and the multi-threaded
+          solutions? Which of the methods better utilises the CPU? (you can
+          check this by opening the Task Manager on both Windows or Linux).
+        </li>
+
+      </ul>
+
+      <h3>Exercise 5: Generalising with <tt>Function&lt;T,R&gt;</tt>
+
+      <ul>
+
+        <li>
+          Write code that generalises Exercise 4; instead of computing
+          <tt>nextProbablePrime()</tt>, it should compute the value of an
+          arbitrary "function" for each element of some input list, using
+          separate threads. Please represent functions using the
+          <tt>Function</tt> interface. Collect the results in a <tt>Map</tt>
+          object as before.
+        </li>
+
+      </ul>
+
+      <h2 name="4">Further work</h2>
+
+      <ol>
+
+        <li>
+          Write a variant of the <tt>InterferenceChecker</tt> class from
+          exercise 2, which ensures mutual exclusion by using a
+          <tt>ReentrantLock</tt>, instead of <tt>synchronized</tt> blocks.
+        </li>
+
+        <li> Do Exercise 3 using an <tt>AtomicInteger</tt> as a counter, whose
+          purpose is to be used inside a loop that repeatedly checks this
+          counter until it indicates that all threads have finished the first
+          job. The loop should include a suitable invocation of
+          <tt>Thread.sleep</tt> so as to reduce the CPU load caused by the
+          program. Change the <tt>run()</tt> method accordingly and check your
+          code's performance.
+        </li>
+
+        <li>
+          There is a lot of online material about concurrency in Java. See for
+          example Oracle's <a
+          href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">concurrency
+          tutorial</a>, the <a
+          href="http://download.oracle.com/javase/tutorial/uiswing/concurrency/">Swing
+          tutorial</a>, the documentation of the <a
+          href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a>
+          package, etc.
+        </li>
+
+      </ol>
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>

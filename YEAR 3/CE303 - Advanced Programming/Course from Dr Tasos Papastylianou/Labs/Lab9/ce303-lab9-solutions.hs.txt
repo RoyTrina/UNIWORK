@@ -1,0 +1,70 @@
+import Data.Maybe
+
+square :: Integer -> Integer
+square x = x * x
+
+fib :: Integer -> Integer
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+
+permute3 :: (a,b,c) -> (c,a,b)
+permute3 (x,y,z) = (z,x,y)
+
+sqList :: Integer -> [Integer]
+sqList 1 = [1]
+sqList n = sqList(n-1) ++ [square n]
+
+sqList2 :: Integer -> [Integer]
+sqList2 n = map(square) [1..n]
+
+minList2 :: [Integer] -> Integer
+minList2 [x] = x
+minList2 (x:xs)
+        | x < minList2 xs = x
+        | otherwise = minList2 xs
+
+minList3 :: [Integer] -> Maybe Integer
+minList3 [] = Nothing
+minList3 [x] = Just x
+minList3 (x:xs)
+        | Just x < minList3 xs = Just x
+        | otherwise = minList3 xs
+
+deriv :: (Integer -> Integer) -> Integer -> Integer
+deriv f n = f (n+1) - f n
+
+testDerivResult = map (deriv square) [1..10]
+
+testDerivResultGeneralised :: [Integer] -> [Integer]
+testDerivResultGeneralised (x:xs) = map (deriv square) (x:xs)
+
+forall :: (a -> Bool) -> [a] -> Bool
+forall p [] = True
+forall p (x:xs) = p x && forall p xs
+
+isPrime :: Integer -> Bool
+isPrime n = forall (\x -> n `mod` x /= 0) [2..(div n 2)]
+
+primesUpto :: Integer -> [Integer]
+primesUpto 2 = [2]
+primesUpto n
+        | isPrime n == True = primesUpto (n-1) ++ [n]
+        | otherwise = primesUpto (n-1)
+
+minListFold :: [Integer] -> Integer
+minListFold (x:xs) = foldl1 (min) (x:xs)
+
+-- forallFold :: (a -> Bool) -> [a] -> Bool
+-- forallFold p (x:xs) = foldl1 (p) (x:xs)
+
+data Term = Number Int | Plus Term Term | Minus Term Term | Times Term Term |
+        Div Term Term
+            deriving (Eq, Ord, Show)
+
+eval:: Term -> Int
+eval (Number i) = i
+eval (Plus t1 t2) = eval t1 + eval t2
+eval (Minus t1 t2) = eval t1 - eval t2
+eval (Times t1 t2) = eval t1 * eval t2
+eval (Div t1 t2) = eval t1 `div` eval t2

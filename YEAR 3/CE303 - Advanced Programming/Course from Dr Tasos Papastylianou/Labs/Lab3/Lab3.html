@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { background-color: #2a211c; color: #fdce9d; font-size: 0.9em; font-family: monospace; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 3.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 3. Cloning, IO Streams, Serialisation / JSON</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Cloning</a></li>
+          <li><a href="#2">IO Streams</a></li>
+          <li><a href="#3">Serialisation (with JUnit)</a></li>
+          <li><a href="#4">JSON (using gson)</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <blockquote style="background-color: #00ddff;">
+
+        Note: As always, for labs, I encourage students to work from linux,
+        using plain textfiles (preferably edited in a terminal editor like vim
+        or nano), compiling directly in the terminal, and learning to read
+        stacktraces "like a pro".
+
+        <p></p>
+
+        However, it's entirely up to you if you want to work from Windows / an
+        IDE instead, and myself and the GLAs will be happy to help you
+        troubleshoot the many problems you are most certainly going to encounter
+        on those systems.  :)
+
+      </blockquote>
+
+      <h2 name="1">Part 1. Cloning</h2>
+
+      <h3>Exercise 1.</h3>
+
+      <ul>
+
+        <li> Preparation: Download the zip file for this lab from moodle.
+        </li>
+
+        <li> In the folder labelled <code>Exercise 1 - Cloning</code>, you will
+          find two java classes, <code>Student</code> and
+          <code>TestStudentCloning</code>. Open these files in a suitable editor
+          and study them.
+        </li>
+
+        <li> Class <code>Student</code> is a simple class creating a student
+          object, which contains a <code>String</code> for the student’s name
+          and a <code>List</code> that holds the programming languages that this
+          student knows.  Note that the class defines a <code>clone()</code>
+          method that invokes <code>Object.clone()</code>.
+        </li>
+
+        <li> Class <code>TestStudentCloning</code> contains a couple of JUnit
+          tests:
+
+          <ol>
+
+            <li> Method <code>testClone</code> checks whether
+              <code>Student.clone()</code> implements a proper cloning
+              operation, e.g. the clone should be equal to the original and it
+              should belong to the same class.
+            </li>
+
+            <li> Methods <code>testDeepClone1</code> and
+              <code>testDeepClone2</code> check that changes to the clone do not
+              change the original.
+            </li>
+
+          </ol>
+
+        </li>
+
+        <li> Run these JUnit tests.
+
+          <blockquote style="background-color: #44cc99;">
+
+            Hint: Copy/paste the following command in your terminal to
+            automatically download the junit jar file directly to your current
+            directory.
+
+  <pre><code>
+  wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.0/junit-platform-console-standalone-1.9.0.jar -O junit.jar
+  </pre></code>
+
+            In general, you can run tests defined in a specific test-class by
+            compiling and running with junit as follows:
+
+  <pre><code>
+  javac -cp .:junit.jar YourTestClass.java
+  java -jar junit.jar -cp . --select-class YourTestClass
+  </pre></code>
+
+            (see <a
+            href="https://moodle.essex.ac.uk/mod/resource/view.php?id=976555">Lab
+            1</a> if you need a refresher on how to run unit tests on the
+            terminal using the Jupyter JUnit test-suite).
+
+          </blockquote>
+
+          In the
+          JUnit result window, it should show <code>testClone</code> as passed
+          (“green tick”), while the other two test methods should show as
+          failed.
+
+          <blockquote style="background-color:#ffaa44;"> Note: If you are one of
+            the unlucky students that are still battling on windows, we
+            discovered in last week's labs that the <code>cmd</code> terminal in
+            windows does not support proper colours and fancy characters, so the
+            JUnit test output will look like a garbled mess.
+
+            <p></p>
+
+            If you'd like to see what these tests look like in a proper terminal
+            on windows, find the <code>git bash</code> application from your
+            "Start Menu", which has been installed for you by the university.
+            This will open a more compatible terminal for you to use.
+
+            <p></p>
+
+            This also provides the <code>nano</code> terminal editor if you'd
+            like to try your luck with it from within windows. :)
+
+          </blockquote>
+
+        </li>
+
+        <li> Your task is to replace the ‘shallow cloning’ code with an
+          implementation of ‘deep cloning’ for class <code>Student</code> which
+          returns an independent copy that does not share any mutable objects
+          with the original.
+        </li>
+
+        <li> Run the JUnit tests to check your method is correct.
+        </li>
+
+      </ul>
+
+      <h2 name="2">Part 2: IO Streams</h2>
+
+      <h3>Exercise 2</h3>
+
+      <ul>
+
+        <li> Folder <code>Exercise 2 - IOStreamsDemo</code> contains a copy the
+          files that were demonstrated during the lecture in the context of IO
+          streams. Study them to make sure you're comfortable with what they do.
+        </li>
+
+        <li> Currently, the code reads and writes things from/to stdin, stdout,
+          and stderr. Modify the code in <code>Main.java</code> such that
+          instead it reads from files called <code>In.txt</code>,
+          <code>Out.txt</code>, and <code>Err.txt</code> respectively.
+
+          <blockquote style="background-color:#ccccff;"> You can easily create
+            your <code>In.txt</code> file from the terminal, by 'dumping' the
+            output of <code>java Say</code> into a file, by using "file
+            redirection" (which works similar to a pipe, but instead of passing
+            the output to another command, you're copying it straight to a
+            file).
+
+            <p></p>
+
+            The 'file redirection' symbol is <code>&gt;</code> (or
+            <code>&gt;&gt;</code> to <i>append</i> instead of overwriting the
+            contents of a file). E.g.
+
+  <pre><code>
+  java Say > In.txt
+  </pre></code>
+
+          </blockquote>
+
+        </li>
+
+      </ul>
+
+      <h2 name="3">Part 3: Serialisation</h2>
+
+      <h3>Exercise 3.</h3>
+
+      <ul>
+
+        <li> Make changes to the <code>Student</code> class so as to enable the
+          serialisation of objects belonging to this class.
+        </li>
+
+        <li> Then write a JUnit class <code>TestStudentSerialisation</code> that
+          performs the following test: your program should serialise a
+          <code>Student</code> object to a file, read it back and check that the
+          retrieved object is equal to the original.
+        </li>
+
+        <li> Inspect the generated file, which holds the serialised object.
+
+          <blockquote style="background-color:#ff44cc;"> Please note that this
+            file is in a binary format so some text editors may not be able to
+            open it.<br><br>The best way to view it would be with a hex viewer:
+            on linux (and the 'git bash' terminal on windows) you can use the
+            <code>xxd</code> command which produces a 'hexadecimal dump'
+            alongside an 'ASCII' representation of the bytes (but not all bytes
+            have an ASCII representation!).<br><br>You can also capture the
+            output of the <code>xxd</code> command by piping it into the
+            <code>less</code> command, e.g.  <code>xxd test.dat | less</code>,
+            which will then allow you to also scroll up and down interactively
+            with the arrow keys; press <code>q</code> to exit 'less'.
+          </blockquote>
+
+      </ul>
+
+      <h2 name="4">Part 4: JSON (and using gson)</h2>
+
+      <h3>Exercise 4.</h3>
+
+
+      <ul>
+
+        <li>
+          Download the latest gson jar file into your <code>Exercise 4</code> folder. To do this:
+
+          <ol>
+            <li>go to <a href=https://search.maven.org/artifact/com.google.code.gson/gson/2.10/jar">gson's official page on the 'Maven Central Repository Search' facility</a></li>
+            <li>Click on <code>Downloads</code> on the top right of the page</li>
+            <li>Download the top option (i.e. <code>jar</code>)</li>
+          </ol>
+
+          Alternatively, type the following in your terminal to download gson.jar directly into your current directory:
+
+  <pre><code>
+  wget https://search.maven.org/remotecontent?filepath=com/google/code/gson/gson/2.10/gson-2.10.jar -O gson.jar
+  </pre></code>
+
+        </li>
+
+        <li> Your task is to write a JUnit class TestStudentJson that uses Gson
+          to serialise the object student to a file, reads it back and checks
+          that the retrieved object is equal to the original.
+        </li>
+
+        <li> Take a look at the JSON file that was generated by Gson. Is
+          the data format as expected?
+        </li>
+
+      </ul>
+
+
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>

@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="jerseyEtc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-server-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.json-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.interceptor-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.json.bind-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-container-servlet-core-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/aopalliance-repackaged-2.5.0-b42.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javassist-3.22.0-CR2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-media-jaxb-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/validation-api-1.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.annotation-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.json-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/yasson-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.inject-2.5.0-b42.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-container-servlet-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/cdi-api-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/osgi-resource-locator-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.ws.rs-api-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-hk2-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/hk2-locator-2.5.0-b42.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/hk2-utils-2.5.0-b42.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-client-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-media-json-binding-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/javax.el-api-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/jersey-common-2.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jerseyEtc/hk2-api-2.5.0-b42.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { font-size: 0.9em; font-family: monospace; }
+      pre, code         { background-color: #2a211c; color: #fdce9d; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 6.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 6. Collections and Generics</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Exercise 1. Varargs</a></li>
+          <li><a href="#2">Exercise 2. Frequency Map</a></li>
+          <li><a href="#3">Exercise 3. Basic Zip method</a></li>
+          <li><a href="#4">Exercise 4. Generic Zip method</a></li>
+          <li><a href="#5">Further work: The Producer-Consumer pattern</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+
+
+      <h3 id="1">Exercise 1.</h2>
+
+      <ul>
+        <li>
+          <p> Write a Java 'variable argument' (varargs) generic method
+
+  <pre><code>
+  public static &lt;A&gt; List&lt;A&gt; concat( List&lt;A&gt; ... lists )
+  </code></pre>
+
+            that concatenates the argument lists into one list. For example, in
+            <i>pseudocode</i>:
+
+  <pre><code>
+  concat( [1,2], [3,4], [5,6] ) --&gt; [1,2,3,4,5,6]   # note: pseudocode, not valid java
+  </code></pre>
+          </p>
+        </li>
+
+        <li> Then write a method <code>testConcat()</code> that tests
+          <code>concat()</code> by applying it to some sample lists.
+
+          <blockquote style="background-color: #00aaff;">You can construct
+            simple lists very efficiently by using the varargs variant of the
+            <tt>Arrays.asList()</tt> method.
+          </blockquote>
+        </li>
+      </ul>
+
+
+
+      <h3 id="2">Exercise 2. Frequency Map</h3>
+
+      <ul>
+
+        <li>
+          <p>
+            Write a Java generic method
+
+  <pre><code>
+  public static &lt;A&gt; Map&lt;A, Integer&gt; frequencyMap( Collection&lt;A&gt; collection )
+  </code></pre>
+
+            which returns a map with the number of occurrences of each element
+            in a collection.
+          </p>
+
+          <p> For example, given the list <tt>["a", "b", "a", "a"]</tt>, the
+            function should return the map <tt>{"a": 3, "b": 1}</tt> (i.e.
+            associate key string <tt>"a"</tt> with number value <tt>3</tt> and
+            key <tt>"b"</tt> with value <tt>1</tt>).
+          </p>
+        </li>
+
+        <li> Then write a method <code>testFrequencyMap()</code> that tests
+          <code>frequenceyMap()</code> by applying it to some sample collections
+        </li>
+      </ul>
+
+
+
+      <h3 id="3">Exercise 3. Basic Zip method</h3>
+
+      <blockquote style="background-color: #ffaa44;">
+        Note: "Zipping" in this context does not refer to the popular archiving
+        technology.
+
+        <p> When dealing with lists (in any language), 'zipping' refers to the
+          act of bringing these two lists together in some way that involves
+          pairing elements at the same position in each list, thus producing a
+          single list as a result. Typically the output is a single list of
+          'pairs', but the term can be used more broadly to imply any operation
+          on the paired elements.
+        </p>
+
+        The name comes from the analogy with physical 'zippers', such as the one
+        on your coat, which slides along two separate rows of 'teeth',
+        converting them to a single row of entangled tooth-pairs.
+      </blockquote>
+
+      <ul>
+
+        <li>
+          <p>
+            Write a static Java method <code>zipWith( f, list1, list2 )</code>
+            which does the following: given a function <code>f</code> of type
+            <code>IntBinaryOperator</code> and lists <code>list1</code> and
+            <code>list2</code> of type <code>List&lt;Integer&gt;</code>, the
+            method should return a new list of integers constructed by applying
+            <code>f</code> consequtively to successive elements of
+            <code>list1</code> and <code>list2</code>.
+          </p>
+
+          <p>
+            For example, (in pseudocode):
+
+  <pre><code>
+  zipWith( (x,y) -&gt; x + y,  [1, 2, 3],  [4, 5, 6] )
+  </code></pre>
+
+            should output the list
+
+  <pre><code>
+  [5, 7, 9]
+  </code></pre>
+
+          </p>
+
+          <p>
+            When applied to lists with different sizes, the function should act
+            as if the longer list had been truncated to the size of the shorter
+            list. For example:
+
+  <pre><code>
+  zipWith( (x, y) -&gt; x * y,  [1, 2, 3], [8, 7] )
+  </code></pre>
+
+            should output the list
+
+  <pre><code>
+  [8, 14]
+  </code></pre>
+
+          </p>
+
+          <blockquote style="background-color: #00dd44;">
+            Hint: It is recommended to approach this using iterators.
+          </blockquote>
+        </li>
+      </ul>
+
+
+
+      <h3 id="4">Exercise 4. Generic Zip method</h3>
+
+      <ul>
+        <li>
+          <p> Change your <code>zipWith</code> method to a generic method. It
+            should take any two lists and a compatible <code>BiFunction</code>.
+          </p>
+
+          <p> When declaring the type of <code>zipWidth</code>, please make use
+            of wildcards so as to make this method as widely applicable as
+            possible.
+          </p>
+        </li>
+
+        <li> Test your program with some sample arguments.
+        </li>
+      </ul>
+
+
+
+      <h3 id="5">Exercise 5. The Producer-Consumer pattern</h3>
+
+      <blockquote> Some nice resources on the Producer-Consumer pattern:
+        <ul>
+
+          <li><a style="color:#444444;"
+            href="https://dzone.com/articles/the-evolution-of-producer-consumer-problem-in-java">The
+            Evolution of the Producer-Consumer problem in java</a>
+          </li>
+
+          <li>An example of using BlockingQueues to implement a
+            Producer-Consumer pattern, from the <a style="color:#444444;"
+            href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html">Java
+            SE v17 API</a> documentation pages.
+          </li>
+        </ul>
+      </blockquote>
+
+      <ul>
+        <li>
+          <p> In the classical producer-consumer problem, producers and
+            consumers share a buffer in which the producers deposit values while
+            the consumers retrieve them.  This can be readily implemented in
+            Java using blocking queues.
+          </p>
+
+          <p> In the exercise below, we will use threads to simulate one
+            producer and one consumer. The two will be communicating via a
+            shared queue that holds values until they have been retrieved by the
+            consumer. The correct implementation should enforce alternating
+            production and consumption of one object at a time as below:
+          </p>
+
+  <pre><code>
+  Producer produced : 4
+  Consumer retrieved: 4
+
+  Producer produced : 1
+  Consumer retrieved: 1
+
+  Producer produced : 5
+  Consumer retrieved: 5
+
+  Producer produced : 4
+  Consumer retrieved: 4
+
+  Producer produced : 0
+  Consumer retrieved: 0
+
+  Producer produced : 1
+  Consumer retrieved: 1
+
+  Producer produced : 1
+  Consumer retrieved: 1
+
+  Producer produced : 0
+  Consumer retrieved: 0
+
+  Producer produced : 1
+  Consumer retrieved: 1
+
+  Producer produced : 4
+  Consumer retrieved: 4
+  </code></pre>
+
+        </li>
+
+        <li> Create a package <code>producerConsumer</code> and copy provided
+          classes <code>Consumer</code>, <code>ProducerInteger</code> and
+          <code>TestProducerConsumer</code> to it.  Study them, then run
+          program <code>TestProducerConsumer</code> a couple of times.  Can you
+          explain why the program is not behaving correctly in the sense
+          described above?
+        </li>
+
+        <li>
+
+          <p> Study class <a
+          href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ArrayBlockingQueue.html">ArrayBlockingQueue</a> from
+          the Java SE v17 API. </p>
+
+          <p> For this exercise, most important are the constructor and
+            the put() and take() methods.
+          </p>
+
+          <p> Use a suitable ArrayBlockingQueue to fix the program so that it
+            alternates between producing and consuming one object at a time.
+          </p>
+        </li>
+      </ul>
+
+
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
