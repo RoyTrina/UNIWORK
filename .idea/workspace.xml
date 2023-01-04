@@ -16,7 +16,15 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -64,7 +72,8 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2045977",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.scopes"
+    "settings.editor.selected.configurable": "project.scopes",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -88,7 +97,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="db2f4cb2-82fb-4ebf-b653-0e5d057e06df" name="Changes" comment="" />
+      <changelist id="0de88625-bc5e-479f-a5c6-534f4c72e8e7" name="Changes" comment="Fixed and added files" />
       <created>1671661228384</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -98,6 +107,7 @@
       <workItem from="1671667356721" duration="502000" />
       <workItem from="1672095225050" duration="3309000" />
       <workItem from="1672098708749" duration="2312000" />
+      <workItem from="1672774641803" duration="270000" />
     </task>
     <task id="LOCAL-00001" summary="Sorted through the files and fixed issues">
       <created>1672096433849</created>
@@ -148,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672100221944</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed and added files">
+      <created>1672774900410</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672774900410</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +189,8 @@
     <MESSAGE value="Added part 2 of ce203 files" />
     <MESSAGE value="Added final part of ce203 files" />
     <MESSAGE value="Added ce204 files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ce204 files" />
+    <MESSAGE value="Fixed and added files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed and added files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
