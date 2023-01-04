@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 Assignment (2022-2023)</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: "Gentium"; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: "Gentium"; }
+      table             { border-collapse: collapse; }
+      th                { border: 1px solid white; border-top: 3px solid; border-bottom: 3px solid; padding: 0.5em; background-color: #666666; font-weight: bold; }
+      tr:nth-child(odd) { background-color: #404040; }
+      tr:nth-child(even){ background-color: #505050; }
+      td                { border: 1px solid white; padding: 0.5em; }
+      tt, pre, code     { background-color: #2a211c; color: #fdce9d; font-size: 0.9em; font-family: monospace; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border: 1px solid black; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+      /* colours */
+      rc { color: #ff6666; } rb { color: #ff6666; font-weight: bold; }
+      oc { color: #ffaa66; } ob { color: #ffaa66; font-weight: bold; }
+      gc { color: #66ff66; } gb { color: #66ff66; font-weight: bold; }
+      bc { color: #66aaff; } bb { color: #66aaff; font-weight: bold; }
+      pc { color: #aa66ff; } pb { color: #aa66ff; font-weight: bold; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ============================ -->
+      <!-- Start of assessment document -->
+      <!-- ============================ -->
+
+      <!-- Page "Header" -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Assignment.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>CE303 assignment: The ‘Virtual Café’.</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Objective</a></li>
+          <li><a href="#2">Deliverables</a></li>
+          <li><a href="#3">Code specification</a></li>
+          <li><a href="#4">Report specification</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <h2 id="1">1. Objective of the assignment</h2>
+
+      <p>
+        The objective of the assignment is to build a “Virtual Café” system,
+        using a client-server architecture.
+      </p>
+
+      <p> Each client application will play the role of a <code>Customer</code>
+        who wants to order tea or coffee. The server application will play the
+        role of the café's virtual <code>Barista</code>, who processes the
+        orders, prepares tea and coffee, and delivers orders back to the
+        customers.
+      </p>
+
+      <h2 id="2">2. Deliverables and breakdown of marks</h2>
+
+      <p>
+        You will need to submit two things:
+        <ul>
+
+          <li>Code, implementing the VirtualCafé system, as per the
+            specification below in Section 3: “Code Specification”.
+            <ul>
+              <li><i>This will count for 75% of your mark.</i></li>
+            </ul>
+          </li>
+
+          <li>One report, no more than 1000 words, discussing your
+            implementation choices. See Section 4: “Report specification”.
+            <ul>
+              <li><i>This will count for 25% of your mark.</i></li>
+            </ul>
+          </li>
+
+        </ul>
+      </p>
+
+      <h2 id="3">3. Code specification</h2>
+
+      <h3>Submitted files</h3>
+
+      <p>
+        You should submit a zipfile with the following contents:
+        <ul>
+          <li>A file called <code>Barista.java</code> with a valid <code>public static void main</code> method, corresponding to your server application.</li>
+          <li>A file called <code>Customer.java</code> with a valid <code>public static void main</code> method, corresponding to your client application.</li>
+          <li>Optionally, if you write any more .java source code that you call from within <code>Barista</code> or <code>Customer</code>, then this should be placed in a folder (i.e. package) called <code>Helpers</code></li>
+          <li>If using the <code>gson</code> library, then your zipfile archive should also contain a <code>gson.jar</code> file at the root of the archive.
+          <li>It should be possible to compile your server application on a terminal by using:
+
+  <pre><code>
+  javac -cp "." Barista.java
+  </code></pre>
+
+            (or, e.g., <code>java -cp ".:gson.jar" Barista</code> if you've also included <code>gson.jar</code> in your zipfile),<br>and then to be able to run it using
+
+  <pre><code>
+  java -cp "." Barista
+  </code></pre>
+
+            (or <code>java -cp ".:gson.jar" Barista</code> respectively).
+
+            <blockquote style="background-color: #0088cc;"> Note: on windows one should use a semicolon (i.e. <code>;</code> ) instead of a colon ( <code>:</code> ) for the classpath.
+            </blockquote>
+          </li>
+
+          <li>Similarly, you should be able to compile and run your client application using equivalent <code>Customer</code> commands.</li>
+
+        </ul>
+      </p>
+
+      <p> Note that the intent is to be able to run one <code>Barista</code>
+        server and multiple <code>Customer</code> clients simultaneously, as
+        separate processes (i.e. each from their own terminal).
+      </p>
+
+      <h3>Role of the <code>Customer</code> client</h3>
+
+      The client will be able to perform the following functions:
+
+      <ul>
+        <li>
+          <p>
+            The user will be able to type commands in a terminal, that the
+            client will send to the server in order to order tea or coffee, ask
+            for their order status, or leave the café.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The client should also be able to print to the terminal any
+            messages or replies sent to them by the Barista.
+          </p>
+        </li>
+
+        <li>
+
+          <p>The user can order one or more teas or coffees via the client at
+            any time, by typing commands like the following:
+
+            <ul>
+            <li><code>order 1 tea</code></li>
+            <li><code>order 1 coffee</code></li>
+            <li><code>order 1 tea and 1 coffee</code></li>
+            <li><code>order 2 teas and 3 coffees</code></li>
+            <li><code>order 1 coffee and 4 teas</code></li>
+            <li> ... etc</li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The user will be able to inquire about the status of their order at
+            any time, by sending the command <code>order status</code> to the
+            server via the client.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The user will be able to leave the café at any time, by typing
+            <code>exit</code>.
+          </p>
+        </li>
+      </ul>
+
+      <div style="border: 2px solid black; border-radius: 0.5em; padding-left: 1em; padding-right: 1em; background-color: #555555;">
+      <br><i>Bonus points</i> awarded if:
+      <ul>
+        <li>Your client can also intercept and gracefully handle SIGTERM signals
+          (e.g. pressing Ctrl-C) for exiting the café.
+        </li>
+        <li>
+          Your client can receive messages from the server at any time. Not just
+          as a response to a command sent by the client.
+        </li>
+      </ul>
+      </div>
+
+
+      <h3>Role of the <code>Barista</code> server</h3>
+
+      The server should perform the following functions:
+
+      <ul>
+
+        <li> <p>It oversees three different types of areas in the café (which
+          should be implemented using an appropriate number of appropriate data
+          structures of your choice):</p>
+
+          <ul>
+            <li>The <rb>waiting area</rb> where orders have been placed, and
+            are waiting to be processed</li>
+            <li>The <ob>brewing area</ob> where teas and coffees get prepared.
+            <li>The <gb>tray area</gb> where finished teas and coffees are
+            placed temporarily, until orders are complete.</li>
+          </ul>
+
+          <p>
+            At any point in time, the server should know how many items are in
+            each of these areas.
+          </p>
+        </li>
+
+        <li>
+          <p>The brewing area should work as follows:</p>
+
+          <ul>
+            <li>The server should only have capacity to process 2 teas at any
+              one time, and 2 coffees at any one time. Tea and coffee
+              preparation are independent from each other (so you could be
+              brewing a maximum of 2 teas and 2 coffees at any point in time).
+            </li>
+
+            <li> Tea preparation takes 30 seconds, coffee takes 45 seconds. (You
+             should simulate these with an appropriate ‘sleep’ function).
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p> The server should listen for, and accept, incoming connections from
+            clients (i.e. <code>Customer</code> program instances, running on
+            separate terminals). In other words, ‘customers’ should be able to
+            join the ‘café’.
+          </p>
+        </li>
+
+        <li>
+          <p> When a client connects, the server should ask for a <bb>name</bb>,
+            (which the user will be expected to type). The server will be using
+            this name for all subsequent transactions with this client, until
+            the client leaves the café.
+          </p>
+        </li>
+
+        <li>
+          <p> The server will listen for incoming orders/commands from connected
+            clients (which should follow the command format specified previously
+            in the "Role of the Customer client" section).
+          </p>
+
+          <p> At any point, if the server receives an unknown command, it should
+            respond to the client by sending back an appropriate error message.
+          </p>
+        </li>
+
+        <li>
+          Once a server receives an order, it should acknowledge this to the
+          client by name, by sending back a message like:
+
+          <ul>
+            <li><code>order received for Mary (2 teas and 3 coffees)</code></li>
+            <li><code>order received for John (1 coffee)</code></li>
+            <li>... etc</li>
+          </ul>
+        </li>
+
+        <li>
+          <p>
+            The server should know at any point in time how many clients are in
+            the café, and for each client it should know if the client is
+            waiting for an order, or if they're just idly sitting in the café.
+          </p>
+        </li>
+
+        <li>
+          <p> When clients “exit” the café, this should be handled appropriately
+            (whether this was because of an <code>exit</code> command, or due to
+            client disconnection).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The server should respond to <code>order status</code>
+            commands by clients, by sending back a message like:
+          <p>
+
+  <pre><code>
+  Order status for John:
+  - 1 coffee and 2 teas in waiting area
+  - 1 coffee and 1 tea currently being prepared
+  - 2 coffees currently in the tray
+  </code></pre>
+
+          <p>
+            (with no message for an area if there is nothing happening there for that client).
+          </p>
+
+          <p> If the client issued an <code>order status</code> command while in
+            an “idle” state, the server should simply reply, e.g. “No order
+            found for John”.
+          </p>
+        </li>
+
+        <li>
+          <p> Once a client's order has been completed (i.e. all items for that
+            client are in the tray area), the server will inform the client by
+            sending back a message, such as:
+          </p>
+
+  <pre><code>
+  order delivered to John (2 teas and 1 coffee)
+  </code></pre>
+
+          <p>
+            and then remove the relevant items from the tray area.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If a client orders new items before their previous order has
+            completed, instead of generating a new ‘order’, the new items
+            should simply be added to the existing order.
+          </p>
+        </li>
+
+        <li>
+          <p>If a client leaves the café before their order has completed,
+            simply discard the relevant objects from the respective areas.
+            <br><span style="font-size: 0.8em;">(But, see bonus points
+            below).</span>
+          </p>
+        </li>
+
+        <li>
+          <p>Every time the server changes state in any way, it should output a log of the current state in the terminal, consisting of the following items:</p>
+          <ul>
+            <li>Number of clients in the café</li>
+            <li>Number of clients waiting for orders.</li>
+            <li>Number and type of items in waiting area, brewing area, and tray area.</li>
+          </ul>
+          <br><span style="font-size: 0.8em;">(Also see bonus points below)</span>
+        </li>
+      </ul>
+
+      <div style="border: 2px solid black; border-radius: 0.5em; padding-left: 1em; padding-right: 1em; background-color: #555555;">
+      <br><i>Bonus points</i> awarded if:
+      <ul>
+        <li>
+          <p>
+            Whenever a client leaves, the server should check if any of their
+            brewing or tray items can be repurposed for orders belonging to
+            other clients.
+          </p>
+          <p>
+            If this happens, print appropriate messages in the server's terminal, e.g.
+            <ul>
+              <li><code>1 coffee currently brewing for John has been transferred to Michael's order</code></li>
+              <li><code>1 tea in John's tray has been transferred to Michael's tray</code></li>
+              <li>... etc</li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          In addition to logging status updates in the server's terminal, also keep logs in an appropriate JSON file. Each entry should also be associated with the date and time of the event.
+        </li>
+      </ul>
+      </div>
+
+      <h3>Other remarks:</h3>
+
+      <ul>
+        <li>You are expected to use appropriate data structures to handle the <rb>waiting</rb>, <ob>brewing</ob>, and <gb>tray</gb> “areas”.
+        <li>It is expected that the server and clients will communicate through sockets</li>
+        <li>It is expected that the server will be able to handle multiple clients <i>concurrently</i> (i.e. using threads).</li>
+        <li>It is expected that orders will be synchronised appropriately to avoid race conditions</li>
+        <li>All code submitted should be well documented, readable, maintainable code.</li>
+        <li>In theory, it is possible to achieve full marks if all parts above have been implemented successfully as per the specification (and code is of excellent quality).<br>Bonus points are awarded <i>on top</i> of this mark, and may earn you up to an extra 10% added to your final mark
+        <br><span style="font-size: 0.8em;">(so, in other words, in theory it is possible for ‘code + report’ to achieve a maximum score of 110%)</span>.</li>
+      </ul>
+
+
+
+      <h2 id="4">4. Report specification</h2>
+
+      The report should be no more than 1000 words, and should consist of the following sections:
+
+      <h3>Implementation details</h3>
+
+      <p>This should detail how you implemented your server and client
+        architecture. It should be as brief as possible, but contain enough
+        detail so that another developer reading this would have enough
+        information to be able to implement your architecture. Specifically,
+        make sure to mention which data structures you used, and why you chose
+        them; and what threads are running in your server and client classes,
+        what their role is, and how they achieve this.
+      </p>
+
+      <p> If you have implemented any of the bonus features, mention this here
+        as well.
+      </p>
+
+      <p> For any functionality mentioned in the code specification that was not
+        implemented, or only partially implemented, mention these in a separate
+        section, explaining why this was the case. Insightful explanations
+        indicating legitimate technical challenges faced and lessons learned may
+        be awarded partial marks. Failing to report missing or partially
+        implemented functionality in this section will be penalised.
+      </p>
+
+      <h3>Project review and personal reflection</h3>
+
+      <p> Reflect on your work. E.g. How did it go? Which parts were
+        challenging? Are there any features that you are particularly proud of
+        (and why?). Could you improve on your current design / is there anything
+        you would do differently next time or if you had fewer time constraints?
+        How did you do with planning? Did you have a steady pace, or did you
+        over/underestimate time required for particular tasks? Did you stick to
+        your original plan, or did you have to change things half way? Have you
+        learnt any lessons while doing this assignment that you think will help
+        you as a programmer going forward?
+      </p>
+
+      <div style="text-align: center; width: 100%; font-size: 1.5em; margin-top: 2em;">
+        <b>•·················•·················•</b>
+        <p> That is all. Good luck! :)</p>
+      </div>
+
+      <!-- ========================== -->
+      <!-- End of assessment document -->
+      <!-- ========================== -->
+
+    </centralcontainer>
+  </body>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { font-size: 0.9em; font-family: monospace; }
+      pre, code         { background-color: #2a211c; color: #fdce9d; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 7.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 7. Optionals and Streams</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Part 1. Class <tt>Optional</tt></a></li>
+          <li><a href="#2">Part 2. Streams</a></li>
+          <li><a href="#3">Part 3. Parallelisation using Streams</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <h2 id="1">Part 1. Class <tt>Optional</tt></h2>
+
+      <h3>Exercise 1. <tt>zipWith</tt> with <tt>Optional</tt> types</h3>
+
+      <ul>
+        <li>
+
+          <p> Remind yourself of the generic <code>zipWith</code> method from
+            the previous lab. This is a method that takes three arguments:
+
+            <ul>
+              <li> A suitable lambda expression, implementing the <code>BiFunction&lt;T, U, R&gt;</code> interface</li>
+              <li> An argument of type <code>List&lt;T&gt;</code></li>
+              <li> An argument of type <code>List&lt;U&gt;</code></li>
+            </ul>
+
+            and returns a list <code>List&lt;R&gt;</code>, such that each
+            element in this list is the result of applying the lambda function
+            on each element from the two input lists corresponding to the same
+            index positions as the output.
+          </p>
+
+          <blockquote style="background-color: #44aaff;">(feel free to refer to either your own solution or the provided
+            solution from lab 6 to refresh your memory.)
+          </blockquote>
+        </li>
+
+        <li>
+
+          <p> Now code a method <code>zipWithOptional( f, alist, blist
+            )</code> that works similar to the <code>zipWith</code> method
+            above, but which uses optional values to deal with any exceptions
+            thrown by <code>f</code>.
+          </p>
+
+          <p>
+            More precisely, given list elements <code>a1</code> and <code>b1</code>:
+
+            <ul>
+              <li> If the computation of <code>f.apply( a1, b1 )</code> throws an exception, then the resulting list entry should be <code>Optional.empty()</code> </li>
+              <li> If no exception is thrown, then the resulting list entry should be <code>Optional.of( f.apply( a1, b1 ) )</code> </li>
+            </ul>
+          </p>
+
+          <p>
+            For example, given arguments <code>list1 = [ 3, 1, 4 ]</code> and <code>list2 = [ -1, 0, 1 ]</code> <span style="font-size: 0.8em;">(note: pseudocode)</span>, then
+
+  <pre><code>
+  zipWithOptional( (x, y) -> x / y, list1, list2 )
+  </code></pre>
+
+            should return the list:
+
+  <pre><code>
+  [ Optional.of( -3 ), Optional.empty, Optional.of( 4 ) ]
+  </code></pre>
+          </p>
+        </li>
+
+        <li>
+          Write a unit test to test your method.
+        </li>
+      </ul>
+
+
+
+
+
+      <h2 id="2">Part 2. Streams</h2>
+
+      <h3>Exercise 2. Sum of Squares</h3>
+
+      <ul>
+        <li>
+          <p>
+            Write a method
+
+  <pre><code>
+  public static int sumOfSquares( int n )
+  </code></pre>
+
+            which calculates the sum of the squares of the first <tt>n</tt>
+            numbers, starting from <tt>1</tt>.
+          </p>
+        </li>
+
+        <li>
+          <p> In your solution, please make use of the methods
+            <code>IntStream.rangeClosed</code>, <code>map</code>, and
+            <code>sum</code>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Then write a JUnit test method <code>sumOfSquaresTest()</code> which
+            checks your method for a couple of numbers <tt>n,</tt> comparing the
+            result with the result of the summation series formula:
+            <div> [$$] \sum_{i=1}^n i^2 = \frac{ n (n+1) (2n+1) }{ 6 } [/$$] </div>
+          </p>
+        </li>
+
+      </ul>
+
+
+      <h3>Exercise 3. University Staff Address Book</h3>
+
+      <ul>
+        <li>
+          Study the <code>Staff.java</code> class provided. Also inspect the contents of file <code>staff.csv</code>.
+        </li>
+
+        <li>
+          <p>
+            Your task is to implement the method:
+
+  <pre><code>
+  public static Map &lt; String, List &lt; Staff &gt; &gt; roomStaffMap( Path path )
+  </code></pre>
+
+            The method should use the <tt>Stream</tt> API to:
+
+            <ul>
+              <li> Read a stream of lines from the file; </li>
+              <li> Transform this into a stream of <code>Staff</code> objects;</li>
+              <li> Collect this stream into a map from room numbers to lists of staff objects
+                   <ul>
+                    <li> see <code>Collectors.groupingBy()</code></li>
+                    </li>
+                   </ul>
+              </li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          Test your program by running <code>Staff.main()</code>
+        </li>
+      </ul>
+
+
+
+      <h3>Exercise 4. Prime Numbers</h3>
+
+      <ul>
+        <li>
+
+          <p>
+            Write a method
+
+  <pre><code>
+  public static boolean isPrime( int n )
+  </code></pre>
+
+            which decides whether a number <tt>n</tt> is prime, by checking that
+            <tt>n</tt> is not divisible by any number between <tt>2</tt> and
+            <code>Math.sqrt( n )</code>.
+          </p>
+
+          <p>
+            Use:
+              <ul>
+                <li> <code>IntStream.rangeClosed()</code> to generate those numbers </li>
+                <li> <code>Stream.noneMatch</code> with a suitable predicate to check that <tt>n</tt> is not divisible by any of them </li>
+              </ul>
+          </p>
+        </li>
+
+        <li>
+
+          <p>
+            Then, write a method
+
+  <pre><code>
+  public static List &lt; Integer &gt; primes( int n )
+  </code></pre>
+
+            which returns a list with the first <tt>n</tt> prime numbers. Follow these steps:
+            <ul>
+              <li> Start off with the infinite stream <tt>3, 5, 7, ...</tt>,
+                generated with the help of method
+                <code>Stream.iterate</code>.<br> Filter this stream with
+                predicate <code>isPrime</code>. This gives you an infinite
+                stream of all odd prime numbers.
+              </li>
+
+              <li> Next, prefix this stream with a stream that consists of the
+                sole number <tt>2</tt>; see methods <code>Stream.of</code>, and
+                <code>Stream.concat</code>. Also, limit the stream to <tt>n</tt>
+                elements. This will give you a stream with the first <tt>n</tt>
+                prime numbers.
+              </li>
+
+              <li>
+                Lastly, collect the stream in a list; see <code>Collectors.toList()</code>.
+              </li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Check your function is correct by comparing the result with some online table of prime numbers (e.g. <a href="https://en.wikipedia.org/wiki/List_of_prime_numbers">https://en.wikipedia.org/wiki/List_of_prime_numbers</a>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Write a JUnit test, to test your function correctly calculates the 1000th prime number (<tt>7919</tt>).
+          </p>
+        </li>
+
+      </ul>
+
+
+
+
+      <h2 id="3">Part 3. Parallelisation using Streams</h2>
+
+      <h3>Exercise 5. Speeding up performance by parallelising with Streams</h3>
+
+      <ul>
+        <li>
+          <p>
+            Recall method <code>BigInteger.nextProbablyPrime</code> from <tt>Lab 2</tt><br>
+            <span style="font-size: 0.8em;">(wow that feels like ages ago, amirite!?)</span>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Use the <tt>Stream</tt> API to compute the value of
+            <code>nextProbablePrime()</code> for some large
+            <code>BigInteger</code> numbers.
+          </p>
+
+          <p>
+            Perform the computation once serially, and once with parallelisation enabled. Compare execution times.
+          </p>
+
+          <p>
+            You can use the following method to generate a stream of arguments:
+
+  <pre><code>
+  public static Stream &lt; BigInteger &gt; randomBigInts ( int bitLength, int numberofElems )
+  {   Random random = new Random();
+      return IntStream.range( 0, numberOfElems )
+                      .mapToObj( n -&gt; new BigInteger( bitLength, random) );
+  }
+  </code></pre>
+
+            Choose a suitable <code>bitLength</code> value so that the execution of <code>nextProbablePrime()</code> on each element takes a few hundred milliseconds.<br>
+            <span style="font-size: 0.8em;">(on my machine, this works with <code>bitLength = 2000</code>)</span>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Parallel execution on a stream is enabled by the invocation of method <code>parallel()</code>.
+          </p>
+
+          <p> Use <code>map</code> to apply method
+            <code>nextProbablePrime</code> to all stream elements, and
+            <code>forEach</code> to show computation results.
+          </p>
+        </li>
+      </ul>
+
+
+
+
+
+
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

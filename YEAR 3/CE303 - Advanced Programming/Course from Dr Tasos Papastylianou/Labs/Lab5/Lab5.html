@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { background-color: #2a211c; color: #fdce9d; font-size: 0.9em; font-family: monospace; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 5.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 5. Web Services</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Jersey Web Services: Setting up a new Project</a></li>
+          <li><a href="#2">Calculator Web Service with Path Parameters</a></li>
+          <li><a href="#3">Test using a Web Browser</a></li>
+          <li><a href="#4">Java Client</a></li>
+          <li><a href="#5">Calculator Web Service - Query Parameters</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <blockquote> Today we'll work from IntelliJ for a change, as we have a
+        complex project with lots of external libraries already set up in
+        IntelliJ for you.<br>(I bet you're surprised, huh!)
+      </blockquote>
+
+      <h3 id="1">Exercise 1. Jersey Web Services: Setting up a new Project</h2>
+
+      <ul>
+        <li>
+          <p>
+            Download Lab5Files.zip from moodle, and unpack it in a suitable
+            location on your machine. This will create a folder called
+            <code>WebServicesLab</code> in that location.
+          </p>
+
+          <p> Start IntelliJ, choose Open Project, and select the
+            <code>WebServicesLab</code> directory as your project root.
+          </p>
+
+          <p>
+            IntelliJ should now load your project.
+            <br>
+            <blockquote style="background-color: #00aadd;">
+              Note that you may have to fix the JDK path in the project or
+              module setup, or download/upload a different JDK version - make
+              sure you follow up any pop up messages from IntelliJ.
+            </blockquote>
+          </p>
+        </li>
+
+        <li>
+          <p> Build the project, and then run the
+            <code>webserver.TomcatServer</code> class in your IDE. You should
+            see some Tomcat start-up messages in the console.
+          </p>
+
+          <p>
+            Then run the class <code>hello.HelloClient</code>. It should run in
+            a separate console window, and print:
+
+  <pre><code>
+  helloPathParam: Hello, Alice!
+  helloQueryParam: {"hello":"Bob"}
+  helloPost:{"hello":"Charlie"}
+  </code></pre>
+
+            <blockquote style="background-color: #ff6622;"> If you're not
+              managing to get this output at this point, ask a GLA for help.
+            </blockquote>
+          </p>
+        </li>
+
+        <li>
+          <p> Now open a new browser window at URL <a
+            href="http://localhost:8080/examples">http://localhost:8080/examples</a>.
+            Try out the web service examples on that page. Also have a look at
+            the program code which implements the <code>hello</code> service.
+          </p>
+        </li>
+      </ul>
+
+
+      <h3 id="2">Exercise 2. Calculator Web Service with Path Parameters</h3>
+
+      <p> Your task in this exercise is to Write a JAX-RS web service for adding
+        up two integers. These numbers should be passed as path parameters. It
+        is recommended that you base your code on class
+        <code>hello.HelloServer</code>.
+      </p>
+
+      <ul>
+
+        <li> Create a package folder called <code>calculator</code> in the
+          <code>src</code> folder (i.e. where the <code>hello</code> and
+          <code>webserver</code> packages are located as well), and create in
+          there a JAX-RS resource class called <code>CalculatorService</code>.
+        </li>
+
+        <li> In class <code>CalculatorService</code>, write a GET resource
+          method for the path <code>/add/{x}/{y}</code>. Your method should
+          bind the two path parameters to corresponding method parameters. The
+          method should return the sum of the two numbers as an
+          <code>int</code> value.
+        </li>
+
+        <blockquote style="background-color: #44ff88;">
+          Note that the method name you choose <b>does not matter</b>! This
+          method is detected via its annotations at runtime, invoked from
+          Tomcat/Jersey appropriately whenever an HTTP GET request is received
+          with a matching path.
+        </blockquote>
+
+        <li> Adjust the call to <code>config.packages(...)</code> inside the
+          <code>start()</code> of the <code>TomcatServer</code> class, to add
+          your calculator package to the list of services started by TomCat
+          when launching the server.
+        </li>
+
+        <li>
+          Now stop, recompile, and restart the TomcatServer.
+        </li>
+
+      </ul>
+
+      <h3 id="3">Exercise 3. Test using a Web Browser</h3>
+
+      <ul>
+
+        <li>
+          <p> Test your web service by opening a new browser page at the
+            following URL: <br> <a
+            href="http://localhost:8080/examples/rest/calculator/add/2/3">http://localhost:8080/examples/rest/calculator/add/2/3</a>
+          </p>
+
+          <p> The page should display ‘5’ which is the result returned by the
+            web service.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            In your IDE, open an editor page for file <code>index.html</code>
+            which is in the <code>WebContent</code> folder of your project. Note
+            that this is the root page for the example web application on the
+            Tomcat server.
+          </p>
+
+          <p> When the server is running, you can view this page at the
+            following address: <a
+            href="http://localhost:8080/examples">http://localhost:8080/examples</a>.
+          </p>
+
+          <p> At the end of this web page, add some HTML code which links to a
+            sample invocation of the calculator web service. Test the link in a
+            web browser.
+          </p>
+        </li>
+      </ul>
+
+      <h3 id="4">Exercise 4. Java Client</h3>
+
+      <ul>
+
+        <li>
+
+          <p>
+            Inside your <code>calculator</code> package folder, write a Java
+            class <code>CalculatorClient</code> with a method
+
+  <pre><code>
+  public int addWithPathParam( int x, int y )
+  </code></pre>
+
+            This method should invoke the calculator web service you coded
+          above, and return the result.
+          </p>
+        </li>
+
+        <li>
+          It is recommended, that you base your code on the
+          <code>HelloClient</code> class.
+        </li>
+
+        <li> Also add a suitable <code>main()</code> method that demonstrates
+          your code.
+        </li>
+
+      </ul>
+
+      <h3 id="5">Exercise 5. Calculator Web Service - Query Parameters</h3>
+
+      <ul>
+
+        <li> In class <code>CalculatorService</code>, add another GET resource
+          method for the path <code>/add</code>. The method should take two
+          integer arguments and return their sum. This time, the two numbers
+          should be passed as query arguments
+        </li>
+
+        <li> Restart the server, and test your new web service by opening a
+          browser at the following URL: <a
+          href="http://localhost:8080/examples/rest/calculator/add?x=2&y=3">http://localhost:8080/examples/rest/calculator/add?x=2&y=3</a>.
+        </li>
+
+        <li> At the end of web page <code>index.html</code>, add HTML code with
+          a link to a sample application of the new service. Test the link in a
+          web browser.
+        </li>
+
+        <li> In class CalculatorClient, add a method:
+
+  <pre><code>
+  public int addWithQueryParam( int x, int y )
+  </code></pre>
+
+          This method should invoke the web service you have just coded and
+          return the result. Test it by adding suitable code to method
+          <code>main()</code>.
+        </li>
+
+      </ul>
+
+
+
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

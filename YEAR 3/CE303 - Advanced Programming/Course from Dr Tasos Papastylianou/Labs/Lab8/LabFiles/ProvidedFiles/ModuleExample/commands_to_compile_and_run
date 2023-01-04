@@ -1,0 +1,2 @@
+javac -d out --module-source-path . --module my.incredible.module
+java --module-path out --module my.incredible.module/mainpackage.Main

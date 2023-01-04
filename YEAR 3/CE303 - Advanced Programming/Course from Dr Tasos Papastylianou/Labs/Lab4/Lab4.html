@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+<!--  - ->
+    <meta http-equiv="refresh" content="2" />
+<!--  -->
+    <title>CE303 - Lab worksheet</title>
+    <script async type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [ ['[$]','[/$]'] ], displayMath: [ ['[$$]','[/$$]'] ], skipTags: ["script","noscript","style","textarea", "code"] }});</script>
+    <script async type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+      a                 { color: #ffffff; }
+      blockquote        { background-color: #ffffe0; font-style: italic; font-family: gentium; padding: 1em; color: #000000; }
+      body              { font-family : "Helvetica", sans; font-size : 13pt; text-align : center; background-color: #444444; color : #eeeeee; }
+      h1                { margin-top: 2em; margin-bottom: 1em; }
+      h2                { margin-top: 3em; margin-bottom: 1em; }
+      h3                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      h4                { margin-top: 2em; margin-bottom: 1em; font-style: italic; }
+      center            { display: block; text-align: center; margin-top: 1em; margin-bottom; 1em; }
+      flex              { display: flex; justify-content: center; margin-top: 1em; margin-bottom; 1em; }
+      html              { scroll-behavior: smooth; }
+      img               { display: inline-block; }
+      li                { margin-bottom: 0.75em; }
+      q                 { font-style: italic; font-family: gentium; }
+      table             { border-collapse: collapse; }
+      table, td         { border: 1px solid black; }
+      tt, pre, code     { background-color: #2a211c; color: #fdce9d; font-size: 0.9em; font-family: monospace; padding: 0.25em; border-radius: 0.5em; line-height: 1.5em }
+      tt, code          { padding-left: 0.5em; padding-right: 0.5em; }
+      pre               { overflow: scroll; }
+      summary           { font-size: 1.2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }
+      centralcontainer  { display : inline-block; width : 60em; margin-bottom: 5em; text-align : left; }
+      toc               { background-color: #666666; border-radius: 1em; padding: 1em; padding-left: 2em; display: block; }
+      hint              { margin-left: 3em; }
+    </style>
+  </head>
+
+  <body>
+    <centralcontainer>
+
+      <!-- ===================== -->
+      <!-- Start of lab workbook -->
+      <!-- ===================== -->
+
+      <!-- Lab header -->
+      <flex>
+        <div style="width:25em; text-align:left;">CE303 Advanced Programming. Lab 4.</div>
+        <div style="width:100%;"></div>
+        <div style="width:20em; text-align:right;">Tasos Papastylianou, 2022-2023</div>
+      </flex>
+
+      <h1>Lab 4. Sockets, and Client/Server architectures</h1>
+
+      <hr>
+      <toc>
+        <ol>
+          <li><a href="#1">Inspecting and debugging the client-server architecture</a></li>
+          <li><a href="#2">Adding functionality to the architecture</a></li>
+        </ol>
+      </toc>
+      <hr>
+
+      <h2 id="1">Part 1. Inspecting and debugging the client-server
+      architecture</h2>
+
+      <h3>Exercise 1. Inspect the architecture</h3>
+
+      <ul>
+
+        <li>
+
+          <p> Download this week's lab zipfile from moodle. Inside you will find
+            the files shown in today's lecture, and model solutions for today's
+            lab (which you are free to refer to during the lab, if you want to
+            double-check your thinking-process / progress).
+          </p>
+
+          <p> Take a look at the client and server classes provided. Note that
+            <code>Bank</code> and <code>Account</code> are ‘Domain Classes’
+            (‘model classes’), i.e. standard Java classes that do not feature
+            any networking code.
+          </p>
+
+          <p>
+            Classes <code>ClientHandler</code> and <code>ServerProgram</code>
+            implement a simple server application. Start the server by running
+            class <code>ServerProgram</code>.
+          </p>
+
+          <p>
+            Launch a few 'clients' from a few different terminals, and play
+            around with the commands, until you're happy you understand how it
+            works.
+          </p>
+
+        </li>
+
+      </ul>
+
+
+      <h3>Exercise 2. Test manually using terminal facilities</h3>
+
+      <ul>
+
+        <li>
+          <p>
+            You will have to use linux for this part, as the windows machines do
+            not provide the ‘netcat’ (<code>nc</code>) facility. If you're
+            unable to use linux, you can use the <code>telnet</code> facility on
+            windows instead, but you will not be able to simulate a 'listening'
+            socket with telnet, only a standard socket.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Launch the server normally. Then, instead of launching the client,
+            connect to the server using the following command on your terminal:
+          </p>
+
+  <pre><code>
+  nc localhost 8888
+  </pre></code>
+
+          <p> Now start typing in your terminal, according to the protocol
+            expected by the server (make sure you start by issuing a client id,
+            as is expected by the server). Try to have a 'conversation' with the
+            server, mimicking what the <code>Client</code> class would been
+            sending the server under the hood, and confirm that the server is
+            responding as you would expect. Here's a possible session to type:
+          </p>
+
+  <pre><code>
+  1
+  accounts
+  balance 1002
+  transfer 1002 1001 40
+  balance 1002
+  </pre></code>
+
+          <p> When you're done, press Ctrl+D from an empty line, to send an ‘End
+            Of File’ (EOF) signal to the socket, causing it to close the
+            connection and exit (if the program still doesn't exit, press Ctrl+C
+            to terminate the process).
+          </p>
+
+          <blockquote style="background-color: #00aaff;"> If you're on windows,
+            you likely won't have the netcat
+            installed. You can try using <code>telnet</code> instead:<br> open a
+            normal windows CMD console from the start menu, then type
+            <code>telnet localhost 8888</code>.
+          </blockquote>
+
+        </li>
+
+        <li>
+          <p> Now close your programs, and try to do the reverse. Create a
+            'listen' socket using netcat, on port 8888, by issuing the following
+            command:
+          </p>
+
+  <pre><code>
+  nc -l localhost 8888
+  </pre></code>
+
+          <p>
+            Then, run your ClientProgram as normal. See what happens in netcat
+            when the client sends commands.
+          </p>
+
+        </li>
+
+      </ul>
+
+      <h3>Exercise 3. Debugging in the terminal with jdb</h3>
+
+      <ul>
+
+        <li>
+          <p>
+            Recompile all BankServer files, adding the <code>-g</code> option,
+            to add 'debug symbols' to your compiled classes. E.g.
+          </p>
+
+  <pre></code>
+  javac -g BankServerJava/*.java
+  </code></pre>
+
+          <p>
+            Now, <code>cd</code> into the BankServer directory, and run the java
+            debugger (<code>jdb</code>) on ServerProgram:
+          </p>
+
+  <pre></code>
+  jdb ServerProgram
+  </code></pre>
+
+          <p>
+            Type 'help' to see a list of possible commands (don't type any just
+            yet though).
+          </p>
+
+          <p>
+            Open your ServerProgram.java file in an editor (e.g. nano), and make
+            a note of the line number after the
+            <code>serverSocket.accept()</code> instruction. (in my file this is
+            line <code>23</code>).
+          </p>
+
+          <p>
+            Type the following in your jdb session (use the line number from
+            above):
+          </p>
+
+  <pre><code>
+  stop at ServerProgram:23
+  run
+  </pre></code>
+
+          <p>
+            Your server should now be running, and waiting to accept a
+            connection. Connect to your server using netcat, like before. The
+            debugger should now stop at line 23, as instructed.
+          </p>
+
+          <p>
+            Try the following commands to see what they do:
+          </p>
+
+  <pre><code>
+  print socket
+  dump socket
+  locals
+  </pre></code>
+
+          <p> What do you notice about this <code>socket</code> object? Now also
+            inspect <code>serverSocket</code> in jdb. How does it differ from
+            the previous socket?
+          </p>
+
+          <p> Play around a bit more with jdb, explore its commands.
+          </p>
+
+        </li>
+
+      </ul>
+
+      <h3>Exercise 4. Debugging in the IDE</h3>
+
+      <ul>
+
+        <li>
+          <p>
+            Copy your files to a new folder, and use this to create a new
+            project on intellij. Then run this in 'debug' mode. Use a breakpoint
+            in the same line as before, and explore the intellij debugger, like
+            you did with jdb.
+          </p>
+        </li>
+
+      </ul>
+
+      <h2 id="2">Part 2. Adding functionality to the architecture</h2>
+
+      <h3>Exercise 5. Add a 'create_account' command, server-side</h3>
+
+      <ul>
+
+        <li>
+
+          <p>
+            When a client sends the <code>create_account</code> command, the
+            server should create a new account for the connected customer, and
+            respond with the account number. The initial balance of the new
+            account should be zero (0), and the account number can be anything,
+            as long as it is unique (for example it can be the smallest number
+            above 1000 that is not currently used for any account).
+          </p>
+
+          <p>
+            Add appropriate program code to classes <code>Bank</code> and
+            <code>ClientHandler</code>, to implement this command. Then test the
+            new <code>create_account</code> command from netcat.
+          </p>
+
+        </li>
+
+      </ul>
+
+      <h3>Exercise 6. Add a 'create_account' command, client-side</h3>
+
+      <ul>
+
+        <li>
+
+          <p> Add a <code>createAccount()</code> method to the
+            <code>Client</code> class. Modify the <code>clientProgram</code>
+            class so that the client prompts which operation the user wants to
+            perform: to transfer money, or to create an account, and then handle
+            each possible response. Test the new functionality with your
+            server, using multiple simultaneous clients.
+          </p>
+
+          <blockquote style="background-color: #ff9966;"> Note: If you prefer to
+            work from the intellij IDE, and you want to run multiple instances
+            (i.e. processes) of the <code>ClientProgram</code> class, you need
+            to enable this in intellij, by enabling "Allow multiple instances"
+            in the run configuration options.
+          </blockquote>
+
+        </li>
+
+      </ul>
+
+
+
+
+      <!-- =================== -->
+      <!-- End of lab workbook -->
+      <!-- =================== -->
+
+    </centralcontainer>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,302 @@
+[
+  {
+    "isbn": "0-13-020601-6",
+    "price": 68.0,
+    "title": "UNIX System Administration Handbook",
+    "authors": [
+      {
+        "id": "NEME",
+        "name": "Nemeth, Evi"
+      },
+      {
+        "id": "SNYD",
+        "name": "Snyder, Garth"
+      },
+      {
+        "id": "SEEB",
+        "name": "Seebass, Scott"
+      },
+      {
+        "id": "HEIN",
+        "name": "Hein, Trent R."
+      }
+    ]
+  },
+  {
+    "isbn": "0-13-110362-8",
+    "price": 42.0,
+    "title": "The C Programming Language",
+    "authors": [
+      {
+        "id": "KERN",
+        "name": "Kernighan, Brian"
+      },
+      {
+        "id": "RITC",
+        "name": "Ritchie, Dennis"
+      }
+    ]
+  },
+  {
+    "isbn": "0-19-501919-9",
+    "price": 65.0,
+    "title": "A Pattern Language: Towns, Buildings, Construction",
+    "authors": [
+      {
+        "id": "ALEX",
+        "name": "Alexander, Christopher"
+      },
+      {
+        "id": "ISHI",
+        "name": "Ishikawa, Sara"
+      },
+      {
+        "id": "SILV",
+        "name": "Silverstein, Murray"
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-44124-1",
+    "price": 105.0,
+    "title": "Introduction to Automata Theory, Languages, and Computation",
+    "authors": [
+      {
+        "id": "HOPC",
+        "name": "Hopcroft, John E."
+      },
+      {
+        "id": "ULLM",
+        "name": "Ullman, Jeffrey D."
+      },
+      {
+        "id": "MOTW",
+        "name": "Motwani, Rajeev"
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-63361-2",
+    "price": 54.99,
+    "title": "Design Patterns",
+    "authors": [
+      {
+        "id": "GAMM",
+        "name": "Gamma, Erich"
+      },
+      {
+        "id": "HELM",
+        "name": "Helm, Richard"
+      },
+      {
+        "id": "JOHN",
+        "name": "Johnson, Ralph"
+      },
+      {
+        "id": "VLIS",
+        "name": "Vlissides, John"
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-70073-5",
+    "price": 64.99,
+    "title": "The C++ Programming Language",
+    "authors": [
+      {
+        "id": "STRO",
+        "name": "Stroustrup, Bjarne"
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-83595-9",
+    "price": 29.95,
+    "title": "The Mythical Man-Month",
+    "authors": [
+      {
+        "id": "BROO",
+        "name": "Brooks, Frederick P."
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-84840-6",
+    "price": 79.99,
+    "title": "Computer Graphics: Principles and Practice",
+    "authors": [
+      {
+        "id": "FOLE",
+        "name": "Foley, James D."
+      },
+      {
+        "id": "VAND",
+        "name": "van Dam, Andries"
+      },
+      {
+        "id": "FEIN",
+        "name": "Feiner, Steven K."
+      },
+      {
+        "id": "HUGH",
+        "name": "Hughes, John F."
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-89683-4",
+    "price": 59.99,
+    "title": "The Art of Computer Programming vol. 1",
+    "authors": [
+      {
+        "id": "KNUT",
+        "name": "Knuth, Donald E."
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-89684-2",
+    "price": 59.99,
+    "title": "The Art of Computer Programming vol. 2",
+    "authors": [
+      {
+        "id": "KNUT",
+        "name": "Knuth, Donald E."
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-89685-0",
+    "price": 59.99,
+    "title": "The Art of Computer Programming vol. 3",
+    "authors": [
+      {
+        "id": "KNUT",
+        "name": "Knuth, Donald E."
+      }
+    ]
+  },
+  {
+    "isbn": "0-201-96426-0",
+    "price": 44.95,
+    "title": "A Guide to the SQL Standard",
+    "authors": [
+      {
+        "id": "DATE",
+        "name": "Date, C. J."
+      },
+      {
+        "id": "DARW",
+        "name": "Darwen, Hugh"
+      }
+    ]
+  },
+  {
+    "isbn": "0-262-03293-7",
+    "price": 80.0,
+    "title": "Introduction to Algorithms",
+    "authors": [
+      {
+        "id": "CORM",
+        "name": "Cormen,Thomas H."
+      },
+      {
+        "id": "LEIS",
+        "name": "Leiserson, Charles E."
+      },
+      {
+        "id": "RIVE",
+        "name": "Rivest, Ronald R."
+      },
+      {
+        "id": "STEI",
+        "name": "Stein, Clifford E."
+      }
+    ]
+  },
+  {
+    "isbn": "0-471-11709-9",
+    "price": 60.0,
+    "title": "Applied Cryptography",
+    "authors": [
+      {
+        "id": "SCHN",
+        "name": "Schneier, Bruce"
+      }
+    ]
+  },
+  {
+    "isbn": "0-596-00048-0",
+    "price": 44.95,
+    "title": "JavaScript: The Definitive Guide",
+    "authors": [
+      {
+        "id": "FLAN",
+        "name": "Flanagan, David"
+      }
+    ]
+  },
+  {
+    "isbn": "0-596-00108-8",
+    "price": 16.95,
+    "title": "The Cathedral and the Bazaar",
+    "authors": [
+      {
+        "id": "RAYM",
+        "name": "Raymond, Eric"
+      }
+    ]
+  },
+  {
+    "isbn": "0-679-60261-5",
+    "price": 18.95,
+    "title": "The Soul of a New Machine",
+    "authors": [
+      {
+        "id": "KIDD",
+        "name": "Kidder, Tracy"
+      }
+    ]
+  },
+  {
+    "isbn": "0-684-83130-9",
+    "price": 70.0,
+    "title": "The Codebreakers",
+    "authors": [
+      {
+        "id": "KAHN",
+        "name": "Kahn, David"
+      }
+    ]
+  },
+  {
+    "isbn": "0-7434-1146-3",
+    "price": 13.95,
+    "title": "Cuckoo's Egg",
+    "authors": [
+      {
+        "id": "STOL",
+        "name": "Stoll, Clifford"
+      }
+    ]
+  },
+  {
+    "isbn": "1-56884-203-1",
+    "price": 16.95,
+    "title": "The UNIX Hater's Handbook",
+    "authors": [
+      {
+        "id": "GARF",
+        "name": "Garfinkel, Simson"
+      },
+      {
+        "id": "WEIS",
+        "name": "Weise, Daniel"
+      },
+      {
+        "id": "STRA",
+        "name": "Strassmann, Steven"
+      }
+    ]
+  }
+]

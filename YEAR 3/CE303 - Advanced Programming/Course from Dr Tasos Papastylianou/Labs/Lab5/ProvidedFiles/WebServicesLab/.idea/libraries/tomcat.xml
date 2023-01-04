@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="tomcat">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-logging-log4j-8.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-websocket-8.5.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-jasper-8.5.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/ecj-4.6.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-core-8.5.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-el-8.5.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-core-8.5.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-el-8.5.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-logging-juli-8.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-jasper-8.5.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-embed-websocket-8.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat/tomcat-dbcp-8.5.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
