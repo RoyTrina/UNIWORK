@@ -2,10 +2,10 @@ let start_r;
 let end_r;
 
 function conversion(tagID, start_r, end_r) {
-    const conversion = document.getElementById(tagID);
+    const convert = document.getElementById(tagID);
     const pre = document.createElement("pre");
 
-    conversion.appendChild(pre);
+    convert.appendChild(pre);
 
     const table = pre.appendChild(document.createElement("table"));
     const table_head = pre.appendChild(document.createElement("thead"));
